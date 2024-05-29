@@ -1,4 +1,10 @@
-깃 이름은 나중에 팀 확정되면 바꿀게요 ㅋㅋ
+깃 이름이랑 readme는 나중에 취업에 맞게 바꾸면 될 것 같고 지금 초대된 멤버 외에 프라이빗 상태입니다. 
+
+notion <br>
+https://www.notion.so/Anything-7555b111b0464f729c663b81cc83c7b8
+<br><br><br>
+
+
 
 ## About Git
 
