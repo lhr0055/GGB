@@ -51,7 +51,7 @@ pull받으며 메인의 모든 폴더가 내려오는데 이를 삭제하면 깃
 <br>
 
 ## Git HUb
-🥨 4. push까지 했으면 git저장소로 이동한다.
+🥨 push까지 했으면 git저장소로 이동한다.
 
 깃에서 내 브랜치로 이동하여 *Compare & pull request* 를 클릭 후 **base 'main' <- compare 'mybranch'** 를 확인한다.
 <img width="866" alt="image" src="https://github.com/lhr0055/Anything/assets/129835424/b36b2a9c-3a8d-4d94-a5db-83ce5d3eade7">
