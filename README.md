@@ -21,10 +21,11 @@
 
 - **Backend:**
   - C#
-  - .NET Core
+  - .ASP.net Core
 
 - **Database:**
   - Azure SQL Database
+  - Entity Framework core
 
 - **Hosting:**
   - Microsoft Azure
