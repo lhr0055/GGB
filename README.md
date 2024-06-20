@@ -21,7 +21,7 @@
 
 - **Backend:**
   - C#
-  - .ASP.net Core
+  - ASP.net Core
 
 - **Database:**
   - Azure SQL Database
