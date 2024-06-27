@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header, Footer } from "../Components/Layout";
-import {Home, NotFound, MenuItemDetails, ShoppingCart} from "../Pages";
+import {Home, NotFound, MenuItemDetails, ShoppingCart, Login, Register} from "../Pages";
 import {Routes,Route} from "react-router-dom";
 import {useEffect} from "react";
 import {useDispatch } from "react-redux";
@@ -34,6 +34,8 @@ function App() {
                 <Route path="/menuItemDetails/:menuItemId"
                        element={<MenuItemDetails/>}></Route>
                 <Route path="/ShoppingCart" element={<ShoppingCart/>}></Route>
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
                 <Route path="*" element={<NotFound/>}></Route>
 
             </Routes>
