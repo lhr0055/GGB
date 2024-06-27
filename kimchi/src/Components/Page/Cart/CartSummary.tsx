@@ -3,9 +3,11 @@ import {useSelector, useDispatch} from "react-redux";
 import {cartItemModel} from "../../../Interfaces";
 import {RootState} from "../../../Storage/Redux/store";
 import {removeFromCart, updateQuantity} from "../../../Storage/Redux/shoppingCartSlice";
+import {useUpdateShoppingCartMutation} from "../../../Apis/shoppingCartApi";
 
 function CartSummary() {
     const dispatch = useDispatch();
+    const [updateShoppingCart] = useUpdateShoppingCartMutation();
     const shoppingCartFromStore : cartItemModel[] = useSelector(
         (state : RootState) => state.shoppingCartStore.cartItems ?? []
     )
@@ -17,15 +19,32 @@ function CartSummary() {
     const handleQuantity = (updateQuantityBy: number, cartItem: cartItemModel) => {
         if((updateQuantityBy == -1 && cartItem.quantity == 1) || updateQuantityBy == 0) {
             // 제거해주기
-            dispatch(removeFromCart({cartItem,quantity:0}))
+            updateShoppingCart({
+                menuItemId:cartItem.menuItem?.id,
+                updateQuantityBy:0,
+                userId:"0d3b40b2-4ba2-49b2-8a24-558072b1ce54"
+            });
+            dispatch(removeFromCart({cartItem,quantity:0}));
+
 
         }
         else {
             // 수량 다시 수정
-            dispatch(updateQuantity({cartItem,quantity:cartItem.quantity!+updateQuantityBy}))
+            updateShoppingCart({
+                menuItemId:cartItem.menuItem?.id,
+                updateQuantityBy: updateQuantityBy,
+                userId:"0d3b40b2-4ba2-49b2-8a24-558072b1ce54"
+            })
+            dispatch(updateQuantity({
+                    cartItem,
+                    quantity:cartItem.quantity!+updateQuantityBy,
+            })
+            );
+
+
 
         }
-    }
+    };
 
     return (
         <div className="container p-4 m-2">
