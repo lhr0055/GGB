@@ -1,15 +1,30 @@
 import React from 'react';
-import {useSelector} from "react-redux";
+import {useSelector, useDispatch} from "react-redux";
 import {cartItemModel} from "../../../Interfaces";
 import {RootState} from "../../../Storage/Redux/store";
+import {removeFromCart, updateQuantity} from "../../../Storage/Redux/shoppingCartSlice";
 
 function CartSummary() {
-
+    const dispatch = useDispatch();
     const shoppingCartFromStore : cartItemModel[] = useSelector(
         (state : RootState) => state.shoppingCartStore.cartItems ?? []
     )
     if (!shoppingCartFromStore) {
         return <div>Shoppimg cart empty</div>
+    }
+
+
+    const handleQuantity = (updateQuantityBy: number, cartItem: cartItemModel) => {
+        if((updateQuantityBy == -1 && cartItem.quantity == 1) || updateQuantityBy == 0) {
+            // 제거해주기
+            dispatch(removeFromCart({cartItem,quantity:0}))
+
+        }
+        else {
+            // 수량 다시 수정
+            dispatch(updateQuantity({cartItem,quantity:cartItem.quantity!+updateQuantityBy}))
+
+        }
     }
 
     return (
@@ -48,17 +63,17 @@ function CartSummary() {
                                 }}
                             >
               <span style={{color: "rgba(22,22,22,.7)"}} role="button">
-                <i className="bi bi-dash-circle-fill"></i>
+                <i className="bi bi-dash-circle-fill" onClick={() => handleQuantity(-1,cartItem)}></i>
               </span>
                                 <span>
                 <b>{cartItem.quantity}</b>
               </span>
                                 <span style={{color: "rgba(22,22,22,.7)"}} role="button">
-                <i className="bi bi-plus-circle-fill"></i>
+                <i className="bi bi-plus-circle-fill" onClick={() => handleQuantity(1,cartItem)}></i>
               </span>
                             </div>
 
-                            <button className="btn btn-danger mx-1">Remove</button>
+                            <button className="btn btn-danger mx-1" onClick={() => handleQuantity(0,cartItem)}>Remove</button>
                         </div>
                     </div>
                 </div>
