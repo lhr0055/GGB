@@ -1,6 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import {menuItemModel} from "../../../Interfaces";
 import {Link} from "react-router-dom";
+import {useUpdateShoppingCartMutation} from "../../../Apis/shoppingCartApi";
+import {MiniLoader} from "../Common";
 let menudd = require("../../../Assets/Images/fd.jpg")
 
 interface Props {
@@ -8,6 +10,23 @@ interface Props {
 }
 
 function MenuItemCard(props:Props) {
+    const [isAddingToCart, setIsAddingToCart] = useState<boolean>(false);
+    const [updateShoppingCart] = useUpdateShoppingCartMutation();
+
+    const handleAddToCart = async (menuItemId:number) => {
+        setIsAddingToCart(true);
+
+        const response = await updateShoppingCart({
+            menuItemId:menuItemId,
+            updateQuantityBy: 1,
+            userId:"0d3b40b2-4ba2-49b2-8a24-558072b1ce54"
+        });
+
+
+
+        setIsAddingToCart(false);
+    }
+
     return (
         <div className="col-md-4 col-12 p-4">
             <div
@@ -42,7 +61,20 @@ function MenuItemCard(props:Props) {
                         &nbsp; {props.menuitem.specialTag}
                     </i>
 
-                    <i
+
+                    {isAddingToCart?(
+                        <div style={{
+                            position: "absolute",
+                            top: "15px",
+                            right: "15px",
+                        }}
+                        >
+
+                            <MiniLoader />
+
+                        </div>
+                    ) : (
+                        <i
                         className="bi bi-cart-plus btn btn-outline-danger"
                         style={{
                             position: "absolute",
@@ -53,7 +85,10 @@ function MenuItemCard(props:Props) {
                             outline: "none !important",
                             cursor: "pointer",
                         }}
-                    ></i>
+                        onClick={() => handleAddToCart(props.menuitem.id)}
+                    ></i>)}
+
+
 
                     <div className="text-center">
                         <p className="card-title m-0 text-success fs-3">
