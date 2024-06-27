@@ -4,7 +4,7 @@ import { useGetMenuItemByIdQuery} from "../Apis/menuItemApi";
 import { useNavigate} from "react-router-dom";
 import { useState} from "react";
 import {useUpdateShoppingCartMutation} from "../Apis/shoppingCartApi";
-import {MainLoader} from "../Components/Page/Common";
+import {MainLoader, MiniLoader} from "../Components/Page/Common";
 // USER ID = 0d3b40b2-4ba2-49b2-8a24-558072b1ce54
 const hhh = require("../Assets/Images/fd.jpg");
 
@@ -88,10 +88,16 @@ function MenuItemDetails() {
           </span>
                     <div className="row pt-4">
                         <div className="col-5">
-                            <button className="btn btn-success form-control"
-                            onClick={() => handleAddToCart(data.result?.id)}>
+                            {isAddingToCart ? (
+                                <button disabled className="btn btn-success form-control">
+                                    <MiniLoader size={50}/>
+                                </button>
+                            ): (
+                                <button className="btn btn-success form-control"
+                                                           onClick={() => handleAddToCart(data.result?.id)}>
                                 Add to Cart
-                            </button>
+                            </button>)}
+
                         </div>
 
                         <div className="col-5 ">
