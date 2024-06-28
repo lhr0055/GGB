@@ -1,8 +1,9 @@
 import React, {useState} from "react";
-import {menuItemModel} from "../../../Interfaces";
+import {apiResponse, menuItemModel} from "../../../Interfaces";
 import {Link} from "react-router-dom";
 import {useUpdateShoppingCartMutation} from "../../../Apis/shoppingCartApi";
 import {MiniLoader} from "../Common";
+import {toastNotify} from "../../../Helper";
 let menudd = require("../../../Assets/Images/fd.jpg")
 
 interface Props {
@@ -16,11 +17,14 @@ function MenuItemCard(props:Props) {
     const handleAddToCart = async (menuItemId:number) => {
         setIsAddingToCart(true);
 
-        const response = await updateShoppingCart({
+        const response: apiResponse = await updateShoppingCart({
             menuItemId:menuItemId,
             updateQuantityBy: 1,
             userId:"0d3b40b2-4ba2-49b2-8a24-558072b1ce54"
         });
+        if(response.data && response.data.isSuccess) {
+            toastNotify("Item added to cart successfully.");
+        }
 
 
 
@@ -111,6 +115,7 @@ function MenuItemCard(props:Props) {
                 </div>
             </div>
         </div>
+
     );
 }
 
