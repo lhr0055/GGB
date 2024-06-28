@@ -1,6 +1,16 @@
 import React, {useEffect} from 'react';
 import { Header, Footer } from "../Components/Layout";
-import {Home, NotFound, MenuItemDetails, ShoppingCart, Login, Register} from "../Pages";
+import {
+    Home,
+    NotFound,
+    MenuItemDetails,
+    ShoppingCart,
+    Login,
+    Register,
+    AuthenticationTest,
+    AuthenticationTestAdmin,
+    AccessDenied
+} from "../Pages";
 import {Routes,Route} from "react-router-dom";
 import {useDispatch } from "react-redux";
 import {useGetMenuItemsQuery} from "../Apis/menuItemApi";
@@ -49,6 +59,13 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="*" element={<NotFound/>}></Route>
 
+                <Route path="/authentication"
+                       element={ <AuthenticationTest/> }/>
+
+                <Route path="/authorization"
+                       element={<AuthenticationTestAdmin/>}/>
+
+                <Route path="/accessDenied" element={<AccessDenied/>}/>
             </Routes>
         </div>
         <Footer/>

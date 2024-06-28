@@ -47,8 +47,18 @@ function Header() {
                             <li className="nav-item">
                                 <NavLink className="nav-link" aria-current="page" to="/shoppingCart">
                                     <i className="bi bi-cart4"></i>{" "}
-                                    {shoppingCartFromStore?.length? `(${shoppingCartFromStore.length})`
+                                    {shoppingCartFromStore?.length ? `(${shoppingCartFromStore.length})`
                                         : ""}
+                                </NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" aria-current="page" to="/authentication">
+                                    Authentication
+                                </NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" aria-current="page" to="/authorization">
+                                    authorization
                                 </NavLink>
                             </li>
 
@@ -75,47 +85,48 @@ function Header() {
                                                     background: "transparent",
                                                     border: 0,
                                                 }}
-                                                >
+                                            >
                                                 Welcome,{userData.fullName}
 
 
                                             </button>
                                         </li>
-                                    <li className="nav-item">
-                                    <button
-                                        className="btn btn-success btn-outlined rounded-pill text-white mx-2"
-                                        style={{
-                                            border: "none",
-                                            height: "40px",
-                                            width: "100px",
-                                        }}
-                                        onClick={handleLogout}
-                                    >Logout
-                                    </button>
-                                </li></>)}
+                                        <li className="nav-item">
+                                            <button
+                                                className="btn btn-success btn-outlined rounded-pill text-white mx-2"
+                                                style={{
+                                                    border: "none",
+                                                    height: "40px",
+                                                    width: "100px",
+                                                }}
+                                                onClick={handleLogout}
+                                            >Logout
+                                            </button>
+                                        </li>
+                                    </>)}
 
 
                                 {!userData.id && (
                                     <>
-                                    <li className="nav-item text-white">
-                                        <NavLink className="nav-link" to="/register">
-                                            Register
-                                        </NavLink>
-                                    </li>
+                                        <li className="nav-item text-white">
+                                            <NavLink className="nav-link" to="/register">
+                                                Register
+                                            </NavLink>
+                                        </li>
 
-                                    <li className="nav-item text-white">
-                                        <NavLink
-                                            className="btn btn-success btn-outlined rounded-pill text-white mx-2"
-                                            style={{
-                                                border: "none",
-                                                height: "40px",
-                                                width: "100px",
-                                            }}
-                                            to="/login">
-                                            Login
-                                        </NavLink>
-                                    </li>
-                                </>)}
+                                        <li className="nav-item text-white">
+                                            <NavLink
+                                                className="btn btn-success btn-outlined rounded-pill text-white mx-2"
+                                                style={{
+                                                    border: "none",
+                                                    height: "40px",
+                                                    width: "100px",
+                                                }}
+                                                to="/login">
+                                                Login
+                                            </NavLink>
+                                        </li>
+                                    </>)}
 
 
                             </div>
