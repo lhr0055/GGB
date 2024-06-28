@@ -1,15 +1,27 @@
 import React from "react"
-import {NavLink} from "react-router-dom"
+import {NavLink, useNavigate} from "react-router-dom"
 import {cartItemModel, userModel} from "../../Interfaces";
-import {useSelector} from "react-redux";
+import {useSelector, useDispatch} from "react-redux";
 import {RootState} from "../../Storage/Redux/store";
+import {emptyUserState, setLoggedInUser} from "../../Storage/Redux/userAuthSlice";
 let logo = require("../../Assets/Images/kimchi.png")
 
 
 function Header() {
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const shoppingCartFromStore : cartItemModel[] = useSelector(
         (state : RootState) => state.shoppingCartStore.cartItems ?? []
     );
+
+    // 로그아웃 버튼 클릭 시
+    const handleLogout = () => {
+        localStorage.removeItem("token")
+        dispatch(setLoggedInUser({...emptyUserState}));
+        navigate("/");
+    }
 
     const userData : userModel = useSelector((state: RootState) => state.userAuthStore);
 
@@ -77,6 +89,7 @@ function Header() {
                                             height: "40px",
                                             width: "100px",
                                         }}
+                                        onClick={handleLogout}
                                     >Logout
                                     </button>
                                 </li></>)}
