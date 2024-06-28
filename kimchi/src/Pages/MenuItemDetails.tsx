@@ -9,7 +9,6 @@ import {apiResponse, userModel} from "../Interfaces";
 import {toastNotify} from "../Helper";
 import {useSelector} from "react-redux";
 import {RootState} from "../Storage/Redux/store";
-// USER ID = 0d3b40b2-4ba2-49b2-8a24-558072b1ce54
 const hhh = require("../Assets/Images/fd.jpg");
 
 
@@ -43,7 +42,7 @@ function MenuItemDetails() {
         const response : apiResponse = await updateShoppingCart({
             menuItemId:menuItemId,
             updateQuantityBy:quantity,
-            userId:"0d3b40b2-4ba2-49b2-8a24-558072b1ce54"
+            userId:"userData.id"
         });
 
 

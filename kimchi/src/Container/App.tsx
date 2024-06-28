@@ -12,21 +12,20 @@ import {
     AccessDenied
 } from "../Pages";
 import {Routes,Route} from "react-router-dom";
-import {useDispatch } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useGetMenuItemsQuery} from "../Apis/menuItemApi";
 import {useGetShoppingCartQuery} from "../Apis/shoppingCartApi";
 import {setShoppingCart} from "../Storage/Redux/shoppingCartSlice";
 import userModel from "../Interfaces/userModel";
 import jwtDecode from "jwt-decode";
 import {setLoggedInUser} from "../Storage/Redux/userAuthSlice";
+import {RootState} from "../Storage/Redux/store";
 
 
 function App() {
     const dispatch = useDispatch();
-
-    const {data, isLoading} = useGetShoppingCartQuery(
-        "0d3b40b2-4ba2-49b2-8a24-558072b1ce54"
-    );
+    const userData : userModel = useSelector((state: RootState) => state.userAuthStore);
+    const {data, isLoading} = useGetShoppingCartQuery(userData.id);
 
 
     useEffect(() => {
