@@ -1,4 +1,5 @@
 import React from 'react';
+import {withAuth} from "../HOC";
 
 function AuthenticationTest() {
     return(
@@ -7,4 +8,4 @@ function AuthenticationTest() {
 }
 
 
-export default AuthenticationTest;
+export default withAuth(AuthenticationTest);
