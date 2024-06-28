@@ -1,9 +1,11 @@
 import React, {useState} from "react";
-import {apiResponse, menuItemModel} from "../../../Interfaces";
-import {Link} from "react-router-dom";
+import {apiResponse, menuItemModel, userModel} from "../../../Interfaces";
+import {Link, useNavigate} from "react-router-dom";
 import {useUpdateShoppingCartMutation} from "../../../Apis/shoppingCartApi";
 import {MiniLoader} from "../Common";
 import {toastNotify} from "../../../Helper";
+import {useSelector} from "react-redux";
+import {RootState} from "../../../Storage/Redux/store";
 let menudd = require("../../../Assets/Images/fd.jpg")
 
 interface Props {
@@ -11,10 +13,17 @@ interface Props {
 }
 
 function MenuItemCard(props:Props) {
+    const navigate = useNavigate();
     const [isAddingToCart, setIsAddingToCart] = useState<boolean>(false);
     const [updateShoppingCart] = useUpdateShoppingCartMutation();
+    const userData : userModel = useSelector((state: RootState) => state.userAuthStore);
+
 
     const handleAddToCart = async (menuItemId:number) => {
+        if(!userData.id) {
+            navigate("/login");
+            return;
+        }
         setIsAddingToCart(true);
 
         const response: apiResponse = await updateShoppingCart({
@@ -25,9 +34,6 @@ function MenuItemCard(props:Props) {
         if(response.data && response.data.isSuccess) {
             toastNotify("Item added to cart successfully.");
         }
-
-
-
         setIsAddingToCart(false);
     }
 
