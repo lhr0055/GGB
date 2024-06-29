@@ -47,10 +47,10 @@ function Header() {
                             <li className="nav-item">
                                 <NavLink className="nav-link" aria-current="page" to="/shoppingCart">
                                     <i className="bi bi-cart4"></i>{" "}
-                                    {userData.id && `(${shoppingCartFromStore.length})`}
+                                    {userData.id && `(${shoppingCartFromStore.length}₩)`}
                                 </NavLink>
                             </li>
-                            
+
 
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
