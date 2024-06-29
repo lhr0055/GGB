@@ -5,7 +5,7 @@ import {SD_Roles} from "../Utility/SD";
 
 const withAdminAuth = (WrappedComponent : any) => {
     return(props: any) => {
-        console.log("HOC called");
+
         const accessToken = localStorage.getItem("token") ?? ""; // 토큰이 있는지 확인
         if(accessToken) {
             const decode: {

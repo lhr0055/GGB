@@ -50,7 +50,7 @@ function MenuItemDetails() {
             toastNotify("item added to cart successfully");
         }
 
-        console.log(response);
+
 
         setIsAddingToCart(false);
     }

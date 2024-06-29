@@ -9,7 +9,7 @@ import {
     Register,
     AuthenticationTest,
     AuthenticationTestAdmin,
-    AccessDenied
+    AccessDenied, Payment
 } from "../Pages";
 import {Routes,Route} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
@@ -38,7 +38,7 @@ function App() {
 
     useEffect(() => {
         if(!isLoading) {
-            console.log(data.result);
+
             dispatch(setShoppingCart(data.result?.cartItems))
         }
     }, [data]);
@@ -65,6 +65,7 @@ function App() {
                        element={<AuthenticationTestAdmin/>}/>
 
                 <Route path="/accessDenied" element={<AccessDenied/>}/>
+                <Route path="/payment" element={<Payment/>}/>
             </Routes>
         </div>
         <Footer/>
