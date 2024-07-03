@@ -1,0 +1,44 @@
+import React from "react";
+import { useLocation } from "react-router-dom";
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
+import { PaymentForm } from "../Components/Page/Payment";
+import { OrderSummary } from "../Components/Page/Order";
+
+function Payment() {
+    const {
+        state: { apiResult, userInput },
+    } = useLocation();
+    //탐색 시 state에서 전달하는 모든 항목이 추출되고 자동으로 검색된다. 
+    // console.log(apiResult);
+    // console.log(userInput);
+    const stripePromise = loadStripe(
+        // 'pk_test_51MG6xmDU3OjDrP4GJV8avgtFNNGxikOffHWtYgncDFkahat38KLX3foPPgFbk0JHNG2FmYhIpSNl2lqbnR3uEfRM00Bv0LptTW'
+        "pk_test_51MG6xmDU3OjDrP4GJV8avgtFNNGxikOffHWtYgncDFkahat38KLX3foPPgFbk0JHNG2FmYhIpSNl2lqbnR3uEfRM00Bv0LptTW"
+    );
+    const options = {
+        // passing the client secret obtained from the server
+        clientSecret: apiResult.clientSecret,
+      };
+
+    return (
+    <Elements stripe={stripePromise} options={options}>
+        <div className="container m-5 p-5">
+            <div className="row">
+                <div className="col-md-7"> 
+                    <OrderSummary data={apiResult} userInput={userInput}/> {/* api에서 가져온 값(props) 전달하기 */}
+                </div>
+                        
+                <div className="col-md-4 offset-md-1">
+                    <h3 className="text-success"> Payment </h3>
+                    <div className="mt-5">
+                        <PaymentForm data={apiResult} userInput={userInput} />
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </Elements>
+    )
+}
+
+export default Payment;
