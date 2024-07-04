@@ -15,14 +15,15 @@ const PaymentForm = ({data, userInput} : orderSummaryProps) => {
   const [isProcessing, setIsProcessing] = useState(false);
   // console.log("data");
   // console.log(data);
-  const handleSubmit = async (event : React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const handleSubmit = async (e : React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
     if (!stripe || !elements) {
       return;
     }
-
+    
     setIsProcessing(true);
+
     const result = await stripe.confirmPayment({
       //`Elements` 결제 요소를 생성하는데 사용된 요소 인스턴스 
       elements,

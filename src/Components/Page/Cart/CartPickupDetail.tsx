@@ -7,7 +7,7 @@ import { MiniLoader } from "../Common";
 import { useInitiatePaymentMutation } from "../../../Apis/paymentApi";
 import { useNavigate } from "react-router-dom";
 
-export default function CartPicupDetails(){
+export default function CartPickupDetails(){
     const[loading, setLoading] = useState(false); //결제 시 미니 로딩 구현
     const shoppingCartFromStore: cartItemModel[] = useSelector(
         (state : RootState) => state.shoppingCartStore.cartItems ?? []

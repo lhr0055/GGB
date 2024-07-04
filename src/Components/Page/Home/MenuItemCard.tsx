@@ -44,7 +44,7 @@ function MenuItemCard(props:Props){
 
 
     return(
-        <div className="col-md-4 col-12 p-4">
+      <div className="col-md-4 col-12 p-4">
       <div
         className="card"
         style={{ boxShadow: "0 1px 7px 0 rgb(0 0 0 / 50%)" }}
@@ -54,7 +54,11 @@ function MenuItemCard(props:Props){
             <Link to={`/menuItemsDetails/${props.menuItem.id}`}>
             <img
               src={props.menuItem.image}
-              style={{ borderRadius: "50%", width:"150px", height:"150px" }}
+              style={{ 
+                objectFit: "cover", //이미지 사이즈에 맞춰 
+                borderRadius: "100%", 
+                height:"200px",
+              }}
               alt=""
               className="w-100 mt-5 image-box"
             />

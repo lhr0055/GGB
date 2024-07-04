@@ -6,7 +6,7 @@ const paymentApi = createApi({
         baseUrl: "https://redkimchiapi.azurewebsites.net/api/",
         prepareHeaders: (headers:Headers, api) =>{
             const token = localStorage.getItem("token");
-            token&&headers.append ("Authorization", "Bearer " + token);
+            token && headers.append ("Authorization", "Bearer " + token);
         },
     }),
     endpoints: (builder) => ({
