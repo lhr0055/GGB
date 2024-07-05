@@ -13,8 +13,8 @@ function Payment() {
     // console.log(apiResult,",,,,?");
     // console.log(userInput);
     const stripePromise = loadStripe(
-        // 'pk_test_51MG6xmDU3OjDrP4GJV8avgtFNNGxikOffHWtYgncDFkahat38KLX3foPPgFbk0JHNG2FmYhIpSNl2lqbnR3uEfRM00Bv0LptTW'
-        "pk_test_51OFV1BFzFaS5ZO8iIXxxORORopZdKVSEeV83b8I9LHx9LwMPINjPJ18zg9KueWgCOrz5cAJzFpnYjwUHAi4RCx1B00QuWQHJ9a"
+        "pk_test_TYooMQauvdEDq54NiTphI7jx"
+        // "pk_test_51OFV1BFzFaS5ZO8iIXxxORORopZdKVSEeV83b8I9LHx9LwMPINjPJ18zg9KueWgCOrz5cAJzFpnYjwUHAi4RCx1B00QuWQHJ9a"
     );
     const options = {
         // passing the client secret obtained from the server

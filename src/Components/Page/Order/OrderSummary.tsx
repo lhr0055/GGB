@@ -72,10 +72,10 @@ function OrderSummary({ data, userInput }: orderSummaryProps) {
                   <div className="d-flex" key={index}>
                     <div className="d-flex w-100 justify-content-between">
                         <p> {cartItem.menuItem?.name} </p>
-                        <p> ${cartItem.menuItem?.price} x {cartItem.quantity} = </p>
+                        <p> ₩{cartItem.menuItem?.price} x {cartItem.quantity} = </p>
                     </div>
                     <p style={{ width: "70px", textAlign: "right" }}>
-                        $ {(cartItem.menuItem?.price ?? 0) * (cartItem.quantity ?? 0)}
+                      ₩ {(cartItem.menuItem?.price ?? 0) * (cartItem.quantity ?? 0)}
                     </p>
                 </div>
                 );

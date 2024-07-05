@@ -27,6 +27,8 @@ import userModel from '../Interfaces/userModel';
 import jwt_decode from "jwt-decode";
 import { setLoggedInUser } from '../Storage/Redux/userAuthSlice';
 import { RootState } from '../Storage/Redux/store';
+import '../index.css';
+
 
 function App() {
   const dispatch = useDispatch(); //리덕스에 저장된 값 가져오기
