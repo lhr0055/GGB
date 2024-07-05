@@ -8,10 +8,12 @@ import { SD_Categories } from "../../Utility/SD";
 
 
 const Categories = [
-  SD_Categories.APPETIZER,
-  SD_Categories.BEVERAGES,
-  SD_Categories.DESSERT,
-  SD_Categories.ENTREE,
+  SD_Categories.CABBAGE_KIMCHI,
+  SD_Categories.RADISH_KIMCHI,
+  SD_Categories.GREEN_ONION_KIMCHI,
+  SD_Categories.CUCUMBER_KIMCHI,
+  SD_Categories.OTHER_KIMCHI,
+  SD_Categories.DISH,
 ];
 
 const menuItemData = {

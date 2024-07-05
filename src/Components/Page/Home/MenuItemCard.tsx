@@ -58,6 +58,7 @@ function MenuItemCard(props:Props){
                 objectFit: "cover", //이미지 사이즈에 맞춰 
                 borderRadius: "100%", 
                 height:"200px",
+                border:"1px solid lightgray"
               }}
               alt=""
               className="w-100 mt-5 image-box"
@@ -114,11 +115,21 @@ function MenuItemCard(props:Props){
             <p className="card-title m-0 text-success fs-3">
               <Link 
                 to={`/menuItemsDetails/${props.menuItem.id}`}
-                style={{textDecoration: "none", color:"green"}}>
+                style={{
+                  textDecoration: "none", 
+                  color:"green",
+                  display: "-webkit-box",
+                  WebkitBoxOrient: "vertical",
+                  WebkitLineClamp: 1,          // 보여줄 줄 수
+                  overflow: "hidden",          // 넘치는 텍스트 숨기기
+                  textOverflow: "ellipsis"  
+                  }}>
                 {props.menuItem.name}
               </Link>
             </p>
-            <p className="badge bg-secondary" style={{ fontSize: "12px" }}>
+            <p 
+              className="badge bg-secondary" 
+              style={{ fontSize: "12px" }}>
               {props.menuItem.category}
             </p>
           </div>
@@ -128,6 +139,11 @@ function MenuItemCard(props:Props){
               textAlign: "center",
               fontWeight: "light",
               fontSize: "14px",
+              display: "-webkit-box",
+              WebkitBoxOrient: "vertical",
+              WebkitLineClamp: 3,          // 보여줄 줄 수
+              overflow: "hidden",          // 넘치는 텍스트 숨기기
+              textOverflow: "ellipsis"  
             }}>
               {props.menuItem.description}
           </p>

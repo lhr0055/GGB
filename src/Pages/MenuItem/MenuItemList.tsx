@@ -72,7 +72,12 @@ function MenuItemList(){
                 </button>
                 <button 
                   className="btn btn-danger mx-2"
-                  onClick={() => handleMenuItemDelete(menuItem.id)}>
+                  onClick={() => {
+                    if(window.confirm("정말 삭제하겠습니까?"))
+                      {
+                        handleMenuItemDelete(menuItem.id)
+                      }
+                  }}>
                     <i className="bi bi-trash-fill"></i>
                 </button>
               </div>

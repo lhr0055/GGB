@@ -12,10 +12,12 @@ export enum SD_Status {
 }
 
 export enum SD_Categories{
-    APPETIZER = "Appetizer",
-    ENTREE = "Entree",
-    DESSERT = "Dessert",
-    BEVERAGES = "Beverages",
+    CABBAGE_KIMCHI = "Cabbage",
+    RADISH_KIMCHI = "Radish",
+    GREEN_ONION_KIMCHI = "Green Onion",
+    CUCUMBER_KIMCHI = "Cucumber",
+    OTHER_KIMCHI = "Other",
+    DISH = "Dish",
 }
 
 export enum SD_SortTypes {
