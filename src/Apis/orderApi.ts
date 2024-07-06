@@ -32,7 +32,7 @@ const orderApi = createApi({
                     ...(status && { status }),
                     ...(pageSize && { pageSize }),
                     ...(pageNumber && { pageNumber }),
-                  },
+                },
             }),
             transformResponse(apiResponse: {result: any}, meta: any){
                 return{
@@ -44,7 +44,7 @@ const orderApi = createApi({
         }),
         getOrderDetails: builder.query({ //개별주문정보를 가져오는 엔드포인트 
             query: (id) => ({
-                url: `order/{id}`,
+                url: `order/${id}`,
             }),
             providesTags: ["Orders"],
         }),

@@ -1,6 +1,6 @@
 .custom-banner {
     background: linear-gradient(to right, #2c536499, #203a4399, #0f202799),
-      url("/src/Assets/Images/confirmed.jpg") center;
+      url("/src/Assets/Images/confirmed.png") center;
     background-size: cover;
     width: 100%;
     height: 50vh;

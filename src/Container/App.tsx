@@ -82,7 +82,7 @@ function App() {
           <Route path='/accessDenied' element={<AccessDenied/>}/>
           <Route path='/payment' element={<Payment/>}/>
 
-          <Route path='order/orderconfirmed/:id' element={<OrderConfirmed/>}/>
+          <Route path='order/orderConfirmed/:id' element={<OrderConfirmed/>}/>
           <Route path='/order/myOrders' element={<MyOrders />}/>
           <Route path='/order/orderDetails/:id' element={<OrderDetails />}/>
           {/* 주문정보 id값에 따른 주문 상세정보 페이지 라우팅 */}
