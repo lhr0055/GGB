@@ -10,8 +10,8 @@ import { SD_Categories } from "../../Utility/SD";
 const Categories = [
   SD_Categories.CABBAGE_KIMCHI,
   SD_Categories.RADISH_KIMCHI,
-  SD_Categories.GREEN_ONION_KIMCHI,
-  SD_Categories.CUCUMBER_KIMCHI,
+  // SD_Categories.GREEN_ONION_KIMCHI,
+  // SD_Categories.CUCUMBER_KIMCHI,
   SD_Categories.OTHER_KIMCHI,
   SD_Categories.DISH,
 ];

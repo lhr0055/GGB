@@ -14,8 +14,8 @@ export enum SD_Status {
 export enum SD_Categories{
     CABBAGE_KIMCHI = "Cabbage",
     RADISH_KIMCHI = "Radish",
-    GREEN_ONION_KIMCHI = "Green Onion",
-    CUCUMBER_KIMCHI = "Cucumber",
+    // GREEN_ONION_KIMCHI = "Green Onion",
+    // CUCUMBER_KIMCHI = "Cucumber",
     OTHER_KIMCHI = "Other",
     DISH = "Dish",
 }

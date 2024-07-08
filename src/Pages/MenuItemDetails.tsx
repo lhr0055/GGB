@@ -81,7 +81,7 @@ function MenuItemDetails(){
               <p style={{ fontSize: "20px" }} className="pt-2">
                 {data.result?.description}
               </p>
-              <span className="h3">₩{data.result?.price}</span> &nbsp;&nbsp;&nbsp;
+              <span className="h3">{data.result?.price}원</span> &nbsp;&nbsp;&nbsp;
               <span
                 className="pb-2  p-3"
                 style={{ border: "1px solid #333", borderRadius: "30px" }}

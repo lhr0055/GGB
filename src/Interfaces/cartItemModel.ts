@@ -5,6 +5,7 @@ export default interface cartItemModel {
     menuItemId?: number;
     menuItem?: menuItemModel;
     quantity?: number;
+    isChecked? :boolean;
   }
 
   
