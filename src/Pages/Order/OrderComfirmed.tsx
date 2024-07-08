@@ -1,28 +1,38 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-let confirmedImage = require("../../Assets/Images/confirmed.jpg")
+import { useNavigate, useParams } from "react-router-dom";
+
+let orderImage = require("../../Assets/Images/order.png")
 
 function OrderConfirmed(){
     const {id} = useParams();
+    // console.log(id);
+    const navigate = useNavigate();
     return(
-        <div className="w-100 text-center d-flex justify-content-center align-items-center">
+    <div className="w-100 text-center d-flex justify-content-center align-items-center">
       <div>
         <i
-          style={{ fontSize: "7rem" }}
-          className="bi bi-check2-circle text-success"
-        ></i>
+          style={{ fontSize: "6rem" }}
+          className="bi bi-check2-circle text-danger">
+        </i>
         <div className="pb-5">
-          <h2 className=" text-success">Order has been Confirmed!</h2>
-          <h5 className="mt-3">Your order ID: {id}</h5>
-          <p>We will soon start to cook the delicous food you ordered. </p>
-          <img
-            src={confirmedImage}
-            style={{ width: "40%", borderRadius: "30px" }}
-          ></img>
+          <h5 className="mt-1"> order ID: {id}</h5>
+            <img
+              src={orderImage}
+              style={{ 
+                width: "50%", 
+                borderRadius: "10px", 
+                boxShadow:"5px 5px 10px",
+                }}>
+            </img>
         </div>
+        <button className="btn btn-outline-danger rounded-pill"
+              style={{cursor:"pointer"}}
+              onClick={()=> navigate("/order/myorders")}>
+              My Orders
+          </button>
       </div> 
     </div>
-    );
+    ); 
 }
 
 export default OrderConfirmed;

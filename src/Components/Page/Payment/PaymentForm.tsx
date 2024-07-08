@@ -23,7 +23,6 @@ const PaymentForm = ({data, userInput} : orderSummaryProps) => {
     }
     
     setIsProcessing(true);
-
     const result = await stripe.confirmPayment({
       //`Elements` 결제 요소를 생성하는데 사용된 요소 인스턴스 
       elements,
@@ -38,7 +37,7 @@ const PaymentForm = ({data, userInput} : orderSummaryProps) => {
       toastNotify("An unexpected error occured.", "error"); //결제 실패 시 오류 토스트 메시지 
       setIsProcessing(false);
     } else {
-      // console.log(result);
+      console.log("result:",result);
       let grandTotal = 0;
       let totalItems = 0;
       const orderDetailsDTO: any = [];
@@ -57,12 +56,12 @@ const PaymentForm = ({data, userInput} : orderSummaryProps) => {
         pickupName: userInput.name,
         pickupPhoneNumber: userInput.phoneNumber,
         pickupEmail: userInput.email,
-        totalItems: totalItems, 
+        totalItems: totalItems,
         orderTotal: grandTotal,
         orderDetailsDTO: orderDetailsDTO,
-        stripePaymentIntentId: data.stripePaymentIntentId,
+        stripePaymentIntentID: data.stripePaymentIntentId,
         applicationUserId: data.userId,
-        status: 
+        status:
           result.paymentIntent.status === "succeeded"
           ? SD_Status.CONFIRMED
           : SD_Status.PENDING,
@@ -70,7 +69,8 @@ const PaymentForm = ({data, userInput} : orderSummaryProps) => {
 
       if(response){
         if(response.data?.result.status === SD_Status.CONFIRMED){
-          navigate(`/oreder/orderConfirmed/${response.data.result.orderHeaderId}`);
+          navigate(`/order/orderConfirmed/${response.data.result.orderHeaderId}`);
+          console.log(`${response.data.result.orderHeaderId}`)
       }
       else{
         navigate("/failed")

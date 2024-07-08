@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif, 'YangjuByeolsanA1';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -34,4 +34,38 @@ code {
   box-shadow: 0 0 5px #000;
   transform: scale(1.05);
 }
+
+
+/* 폰트 */
+.YangjuByeolsanA1{
+  font-family: 'YangjuByeolsanA1';
+}
+@font-face {
+  font-family: 'YangjuByeolsanA1';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405@1.0/YangjuByeolsanA1.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+.GowunBatang-Regular{
+  font-family: 'GowunBatang-Regular';
+}
+@font-face {
+  font-family: 'GowunBatang-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.HSSanTokki20{
+  font-family: 'HSSanTokki20-Regular';
+}
+
+@font-face {
+  font-family: 'HSSanTokki20-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405@1.0/HSSanTokki20-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 

@@ -65,10 +65,10 @@ function MenuItemCard(props:Props){
             />
             </Link>
           </div>
-          {props.menuItem.specialTag && 
+          {props.menuItem.specialTag &&
             props.menuItem.specialTag.length > 0 &&(
             <i
-              className="bi bi-star btn btn-success"
+              className="bi bi-star btn btn-outline-warning"
               style={{
                 position: "absolute",
                 top: "15px",
@@ -112,16 +112,16 @@ function MenuItemCard(props:Props){
           
 
           <div className="text-center">
-            <p className="card-title m-0 text-success fs-3">
+            <p className="card-title m-0 text-success fs-3 HSSanTokki20">
               <Link 
                 to={`/menuItemsDetails/${props.menuItem.id}`}
                 style={{
                   textDecoration: "none", 
-                  color:"green",
+                  color:"black",
                   display: "-webkit-box",
                   WebkitBoxOrient: "vertical",
-                  WebkitLineClamp: 1,          // 보여줄 줄 수
-                  overflow: "hidden",          // 넘치는 텍스트 숨기기
+                  WebkitLineClamp: 1, // 보여줄 줄 수
+                  overflow: "hidden", // 넘치는 텍스트 숨기기
                   textOverflow: "ellipsis"  
                   }}>
                 {props.menuItem.name}
@@ -141,14 +141,14 @@ function MenuItemCard(props:Props){
               fontSize: "14px",
               display: "-webkit-box",
               WebkitBoxOrient: "vertical",
-              WebkitLineClamp: 3,          // 보여줄 줄 수
-              overflow: "hidden",          // 넘치는 텍스트 숨기기
+              WebkitLineClamp: 3, // 보여줄 줄 수
+              overflow: "hidden", // 넘치는 텍스트 숨기기
               textOverflow: "ellipsis"  
             }}>
               {props.menuItem.description}
           </p>
           <div className="row text-center">
-            <h4>${props.menuItem.price}</h4>
+            <h4>₩{props.menuItem.price}</h4>
           </div>
         </div>
       </div>

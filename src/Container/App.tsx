@@ -27,6 +27,8 @@ import userModel from '../Interfaces/userModel';
 import jwt_decode from "jwt-decode";
 import { setLoggedInUser } from '../Storage/Redux/userAuthSlice';
 import { RootState } from '../Storage/Redux/store';
+import '../index.css';
+
 
 function App() {
   const dispatch = useDispatch(); //리덕스에 저장된 값 가져오기
@@ -80,7 +82,7 @@ function App() {
           <Route path='/accessDenied' element={<AccessDenied/>}/>
           <Route path='/payment' element={<Payment/>}/>
 
-          <Route path='order/orderconfirmed/:id' element={<OrderConfirmed/>}/>
+          <Route path='order/orderConfirmed/:id' element={<OrderConfirmed/>}/>
           <Route path='/order/myOrders' element={<MyOrders />}/>
           <Route path='/order/orderDetails/:id' element={<OrderDetails />}/>
           {/* 주문정보 id값에 따른 주문 상세정보 페이지 라우팅 */}

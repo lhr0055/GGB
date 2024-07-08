@@ -15,7 +15,7 @@ export const shoppingCartSlice = createSlice({
         updateQuantity: (state, action) => {
             //payload - cart item that needs to be updated, newquantity
             state.cartItems = state.cartItems?.map((item)=>{
-                if(item.id === action.payload.cartitem.id){
+                if(item.id === action.payload.cartItem.id){
                 // id가 일치하면 수량을 업데이트 한다. 
                     item.quantity = action.payload.quantity;
                 }
@@ -25,7 +25,7 @@ export const shoppingCartSlice = createSlice({
         removeFromCart: (state, action) => {
             //payload - cart item that needs to be updated, newquantity
             state.cartItems = state.cartItems?.filter((item)=>{
-                if(item.id === action.payload.cartitem.id){
+                if(item.id === action.payload.cartItem.id){
                 // id가 일치하면 수량을 업데이트 한다. 
                     return null;
                 }

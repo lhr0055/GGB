@@ -157,7 +157,7 @@ function MenuItemUpsert(){
                 type="text"
                 className="form-control mt-3"
                 placeholder="Enter Special Tag"
-                name="name"
+                name="specialTag"
                 value={menuItemInputs.specialTag}
                 onChange={handleMenuItemInput}
               />

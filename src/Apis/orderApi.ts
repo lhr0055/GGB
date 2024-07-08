@@ -32,7 +32,7 @@ const orderApi = createApi({
                     ...(status && { status }),
                     ...(pageSize && { pageSize }),
                     ...(pageNumber && { pageNumber }),
-                  },
+                },
             }),
             transformResponse(apiResponse: {result: any}, meta: any){
                 return{

@@ -107,7 +107,7 @@ export default function CartPickupDetails(){
           </div>
           <div className="form-group mt-3">
             <div className="card p-3" style={{ background: "ghostwhite" }}>
-              <h5>Grand Total : ${grandTotal.toFixed(2)}</h5>
+              <h5>Grand Total : ₩{grandTotal.toFixed(2)}</h5>
               <h5>No of items : {totalItems}</h5>
             </div>
           </div>
