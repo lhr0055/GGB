@@ -133,20 +133,20 @@ function MenuItemCard(props:Props){
               {props.menuItem.category}
             </p>
           </div>
-          <p 
-            className="card-text"
-            style={{
-              textAlign: "center",
-              fontWeight: "light",
-              fontSize: "14px",
-              display: "-webkit-box",
-              WebkitBoxOrient: "vertical",
-              WebkitLineClamp: 3, // 보여줄 줄 수
-              overflow: "hidden", // 넘치는 텍스트 숨기기
-              textOverflow: "ellipsis"  
-            }}>
-              {props.menuItem.description}
-          </p>
+          {/*<p */}
+          {/*  className="card-text"*/}
+          {/*  style={{*/}
+          {/*    textAlign: "center",*/}
+          {/*    fontWeight: "light",*/}
+          {/*    fontSize: "14px",*/}
+          {/*    display: "-webkit-box",*/}
+          {/*    WebkitBoxOrient: "vertical",*/}
+          {/*    WebkitLineClamp: 3, // 보여줄 줄 수*/}
+          {/*    overflow: "hidden", // 넘치는 텍스트 숨기기*/}
+          {/*    textOverflow: "ellipsis"  */}
+          {/*  }}>*/}
+          {/*    {props.menuItem.description}*/}
+          {/*</p>*/}
           <div className="row text-center">
             <h4>{props.menuItem.price}원</h4>
           </div>

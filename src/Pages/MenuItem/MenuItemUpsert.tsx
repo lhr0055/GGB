@@ -1,4 +1,4 @@
-// Menu 이미지 파일 올리기 
+// Menu 이미지 파일 올리기
 import React, { useEffect, useState } from "react";
 import { inputHelper, toastNotify } from "../../Helper";
 import { useCrateMenuItemMutation, useGetMenuItemByIdQuery, useUpdateMenuItemMutation } from "../../Apis/menuItemApi";
@@ -54,7 +54,7 @@ function MenuItemUpsert(){
         e: React.ChangeEvent<
         HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
     ) => {
-        const tempData = inputHelper(e, menuItemInputs) //임시데이터에 입력값헬퍼로 전달한다. 
+        const tempData = inputHelper(e, menuItemInputs) //임시데이터에 입력값헬퍼로 전달한다.
         setMenuItemInputs(tempData);//임시데이터로 입력값을 전달한다.(입력받을 수 있게함))
       };
 
@@ -69,12 +69,12 @@ function MenuItemUpsert(){
             });
             if(file.size > 1000 * 1024) {
                 setImageToStore("");
-                toastNotify("File Must be less then 1 MB", "error");
+                //toastNotify("File Must be less then 1 MB", "error");
                 return;
             }
             else if (isImageTypeValid.length === 0){
                 setImageToStore("");
-                toastNotify("File Must be in jpeg, jpg or png", "error");
+                //toastNotify("File Must be in jpeg, jpg or png", "error");
                 return;
             }
             const reader = new FileReader();
@@ -91,7 +91,7 @@ function MenuItemUpsert(){
         e.preventDefault();
         setLoading(true);
         if(!imageToStore && !id){
-          toastNotify("Please upload an image","error");
+          //toastNotify("Please upload an image","error");
           setLoading(false);
           return;
         }
@@ -182,10 +182,10 @@ function MenuItemUpsert(){
                 value={menuItemInputs.price}
                 onChange={handleMenuItemInput}
               />
-              <input 
-                type="file" 
+              <input
+                type="file"
                 onChange={handleFileChange}
-                className="form-control mt-3" 
+                className="form-control mt-3"
               />
               <div className="row">
                 <div className="col-6">
@@ -193,12 +193,12 @@ function MenuItemUpsert(){
                       type="submit"
                       className="btn btn-success form-control mt-3">
                       {/* id가 있으면 업뎃, 없으면 생성으로 버튼 이름 표시하기 */}
-                      {id ? "Update" : "Create" } 
+                      {id ? "Update" : "Create" }
                   </button>
                 </div>
                 <div className="col-6">
-                    <a 
-                      onClick={() => navigate("/menuItem/menuitemlist")} 
+                    <a
+                      onClick={() => navigate("/menuItem/menuitemlist")}
                       className="btn btn-secondary form-control mt-3">
                       Back to Menu Items
                     </a>
@@ -212,7 +212,7 @@ function MenuItemUpsert(){
                 alt=""
               />
             </div>
-            </div>  
+            </div>
         </form>
       </div>
     )
