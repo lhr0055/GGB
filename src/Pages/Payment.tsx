@@ -13,6 +13,7 @@ function Payment() {
     // console.log(apiResult,",,,,?");
     // console.log(userInput);
     const stripePromise = loadStripe(
+        // 임시 test api key
         "pk_test_TYooMQauvdEDq54NiTphI7jx"
         // "pk_test_51OFV1BFzFaS5ZO8iIXxxORORopZdKVSEeV83b8I9LHx9LwMPINjPJ18zg9KueWgCOrz5cAJzFpnYjwUHAi4RCx1B00QuWQHJ9a"
     );

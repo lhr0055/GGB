@@ -2,19 +2,46 @@ import {useStripe, useElements, PaymentElement} from '@stripe/react-stripe-js';
 import { useState } from 'react';
 import { toastNotify } from '../../../Helper';
 import { orderSummaryProps } from '../Order/orderSummaryProps';
-import { apiResponse, cartItemModel } from '../../../Interfaces';
+import { apiResponse, cartItemModel, userModel } from '../../../Interfaces';
 import { SD_Status } from '../../../Utility/SD';
 import { useCreateOrderMutation } from '../../../Apis/orderApi';
 import { useNavigate } from 'react-router-dom';
+import { useUpdateShoppingCartMutation } from '../../../Apis/shoppingCartApi';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeFromCart, updateQuantity } from '../../../Storage/Redux/shoppingCartSlice';
+import { RootState } from "../../../Storage/Redux/store";
 
 const PaymentForm = ({data, userInput} : orderSummaryProps) => {
   const navigate = useNavigate();
   const stripe = useStripe();
   const elements = useElements();
+  const dispatch = useDispatch();
+  const userData: userModel = useSelector(
+    (state: RootState) => state.userAuthStore
+  )
+  const shoppingCartFromStore: cartItemModel[] = useSelector(
+    (state : RootState) => state.shoppingCartStore.cartItems ?? []
+    //Store.ts에서의 type
+);
+  const [updateShoppingCart] = useUpdateShoppingCartMutation();
   const [createOrder] = useCreateOrderMutation();
   const [isProcessing, setIsProcessing] = useState(false);
   // console.log("data");
   // console.log(data);
+
+  //쇼핑카트 비우기 기능
+  const handleQuantity = (
+    updateQuantityBy: number,
+    cartItem: cartItemModel
+  ) => {
+    updateShoppingCart({
+      menuItemId: cartItem.menuItem?.id,
+      updateQuantityBy: 0,
+      userId: userData.id, //사용자 id 가져오기 
+    });
+    dispatch(removeFromCart({cartItem, quantity:0}));
+  }
+
   const handleSubmit = async (e : React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -70,6 +97,10 @@ const PaymentForm = ({data, userInput} : orderSummaryProps) => {
       if(response){
         if(response.data?.result.status === SD_Status.CONFIRMED){
           navigate(`/order/orderConfirmed/${response.data.result.orderHeaderId}`);
+          {shoppingCartFromStore.map((
+            cartItem : cartItemModel, index: number) => {
+              handleQuantity(0,cartItem)
+            })}
           console.log(`${response.data.result.orderHeaderId}`)
       }
       else{

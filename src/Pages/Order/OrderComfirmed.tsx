@@ -7,6 +7,7 @@ function OrderConfirmed(){
     const {id} = useParams();
     // console.log(id);
     const navigate = useNavigate();
+    
     return(
     <div className="w-100 text-center d-flex justify-content-center align-items-center">
       <div>

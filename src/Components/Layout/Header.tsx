@@ -49,7 +49,7 @@ function Header(){
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0 w-100"> 
                         <li className="nav-item">
                             <NavLink className="nav-link" aria-current="page" to="/">
-                                    Home
+                                    홈으로
                             </NavLink>
                         </li>
                         {/* 관리자가 아닌경우 order에 개별 주문 표시하기 */}
