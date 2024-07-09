@@ -9,8 +9,8 @@ import { SD_Status } from "../../Utility/SD";
 const filterOptions = [
   "All",
   SD_Status.CONFIRMED,
-  SD_Status.BEING_COOKED,
-  SD_Status.READY_FOR_PICKUP,
+  SD_Status.PREPARING,
+  SD_Status.SHIPPING,
   SD_Status.CANCELLED,
 ];
 

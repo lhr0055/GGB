@@ -21,10 +21,10 @@ function OrderSummary({ data, userInput }: orderSummaryProps) {
     //현재 상태와 비교하여 다음 상태 나타내기 
     const nextStatus: any = 
       data.status! === SD_Status.CONFIRMED
-      ? {color:"info", value: SD_Status.BEING_COOKED}
-      : data.status! === SD_Status.BEING_COOKED
-      ? {color:"warning", value: SD_Status.READY_FOR_PICKUP}
-      : data.status! === SD_Status.READY_FOR_PICKUP && {
+      ? {color:"info", value: SD_Status.PREPARING}
+      : data.status! === SD_Status.PREPARING
+      ? {color:"warning", value: SD_Status.SHIPPING}
+      : data.status! === SD_Status.SHIPPING && {
         color: "success",
         value: SD_Status.COMPLETED,
       };

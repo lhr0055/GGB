@@ -14,9 +14,9 @@ function MenuItemList(){
     toast.promise(
       deleteMenuItem(id),
       {
-        pending: 'Processing your request...',
-        success: 'Menu Item Deleted Successfully 👌',
-        error: 'Error encountered 🤯'
+        pending: '요청 처리 중..',
+        success: '정상적으로 삭제되었습니다!',
+        error: '오류가 발생하였습니다.'
       },
       {
         theme: "dark",
@@ -60,7 +60,7 @@ function MenuItemList(){
                 />
               </div>
               <div className="col-1">{menuItem.id}</div>
-              <div className="col-2">{menuItem.name}</div>
+              <div className="col-2 ">{menuItem.name}</div>
               <div className="col-2">{menuItem.category}</div>
               <div className="col-1">{menuItem.price}</div>
               <div className="col-2">{menuItem.specialTag}</div>

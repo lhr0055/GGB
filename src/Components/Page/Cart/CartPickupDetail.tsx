@@ -62,14 +62,14 @@ export default function CartPickupDetails(){
 
     return(
         <div className="border pb-5 pt-3">
-        <h1 style={{ fontWeight: "300", color: "#000080"}} className="text-center">
-          Pickup Details
-        </h1>
+        <h2 className="text-center text-success TheJamsil5Bold">
+          주문상세
+        </h2>
         <hr /> 
         {/* 버튼 누르면 이벤트 발생  */}
         <form onSubmit={handleSubmit} className="col-10 mx-auto">
           <div className="form-group mt-3">
-            Pickup Name
+            주문자 성명
             <input
               type="text"
               value={userInput.name}
@@ -81,7 +81,7 @@ export default function CartPickupDetails(){
             />
           </div>
           <div className="form-group mt-3">
-            Pickup Email
+            이메일
             <input
               type="email"
               value={userInput.email}
@@ -94,7 +94,7 @@ export default function CartPickupDetails(){
           </div>
   
           <div className="form-group mt-3">
-            Pickup Phone Number
+            휴대폰번호
             <input
               type="number"
               value={userInput.phoneNumber}
@@ -107,16 +107,19 @@ export default function CartPickupDetails(){
           </div>
           <div className="form-group mt-3">
             <div className="card p-3" style={{ background: "ghostwhite" }}>
-              <h5>Grand Total : {grandTotal.toFixed(0)}원</h5>
-              <h5>No of items : {totalItems}</h5>
+              <h5>총 상품 금액 : {grandTotal.toFixed(0)}원</h5>
+              <h5>총 상품 수량 : {totalItems}</h5>
             </div>
           </div>
           <button
             type="submit"
-            className="btn btn-lg form-control mt-3" style={{backgroundImage: "linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)", fontWeight:"bold", color:"white"}}
+            className="btn btn-lg btn-success form-control mt-3"
+            style={{background :"#800000" ,backgroundImage: "linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)"}}
             disabled={loading || shoppingCartFromStore.length == 0} //로딩중으로 상태 변환한다. 
           >
-            {loading ? <MiniLoader /> : "Looks Good? Place Order!" }
+            <div className="HancomMalangMalang-Regular">
+            {loading ? <MiniLoader /> : "결제하기" }
+            </div>
           </button>
         </form>
       </div>

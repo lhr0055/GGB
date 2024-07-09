@@ -69,19 +69,10 @@ function CartSummary(){
   );
 }};
 
-//체크된 항목의 금액 및 수량 
-const totalAmount = selectedItems
-  .filter(item => item.isChecked)
-  .reduce((acc, item) => acc + (item.menuItem?.price ?? 0) * (item.quantity ?? 0), 0);
-
-const totalQuantity = selectedItems
-  .filter(item => item.isChecked)
-  .reduce((acc, item) => acc + (item.quantity ?? 0), 0);
-
 
     return(
       <div className="container p-4 m-2">
-        <h4 className="text-center text-danger">Cart Summary</h4>
+        <h3 className="text-center text-success TheJamsil5Bold">장바구니</h3>
 
         {/* 모든 장바구니 항목들 반복을 위한 매핑*/}
         {shoppingCartFromStore.map((

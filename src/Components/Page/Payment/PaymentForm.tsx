@@ -91,7 +91,7 @@ const PaymentForm = ({data, userInput} : orderSummaryProps) => {
         status:
           result.paymentIntent.status === "succeeded"
           ? SD_Status.CONFIRMED
-          : SD_Status.PENDING,
+          : SD_Status.PAYMENT,
       });
 
       if(response){

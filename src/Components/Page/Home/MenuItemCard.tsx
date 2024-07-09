@@ -33,7 +33,7 @@ function MenuItemCard(props:Props){
       // userId: "b7ae37bf-09b1-4b47-9ce1-c963031d2920",
       userId: userData.id,
     });
-    if(response.data && response.data.isSucess){
+    if(response.data && response.data.isSuccess){
       toastNotify("Item added to cart successfully!");
     }
     // console.log(response);
@@ -70,7 +70,7 @@ function MenuItemCard(props:Props){
             <i
               className="bi bi-star btn btn-outline-warning"
               style={{
-                position: "absolute",
+                position: "absolute", 
                 top: "15px",
                 left: "15px",
                 padding: "5px 10px",
@@ -112,7 +112,7 @@ function MenuItemCard(props:Props){
           
 
           <div className="text-center">
-            <p className="card-title m-0 text-success fs-3 HSSanTokki20">
+            <p className="card-title m-0 text-success fs-3 SF_HambakSnow">
               <Link 
                 to={`/menuItemsDetails/${props.menuItem.id}`}
                 style={{

@@ -49,7 +49,7 @@ function Header(){
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0 w-100"> 
                         <li className="nav-item fw-bold">
                             <NavLink className="nav-link" aria-current="page" to="/">
-                                    홈으로
+                                    홈 바로가기
                             </NavLink>
                         </li>
                         {/* 관리자가 아닌경우 order에 개별 주문 표시하기 */}
@@ -61,26 +61,26 @@ function Header(){
                                     role="button" 
                                     data-bs-toggle="dropdown" 
                                     aria-expanded="false" >
-                                    Admin Panel
+                                    관리자 
                                 </a>
                             <ul className="dropdown-menu">
                                 <li 
                                     style={{cursor:"pointer"}}
                                     className="dropdown-item" 
                                     onClick={()=> navigate("menuItem/menuitemlist")}>
-                                    Menu Item
+                                    메뉴리스트
                                 </li>
                                 <li 
                                     style={{cursor:"pointer"}}
                                     className="dropdown-item" 
                                     onClick={()=> navigate("order/myorders")}>
-                                    My Orders
+                                    내주문내역
                                 </li>
                                 <li 
                                     style={{cursor:"pointer"}}
                                     className="dropdown-item" 
                                     onClick={()=> navigate("order/allorders")}>
-                                    All Orders
+                                    모든주문내역
                                 </li>
                             </ul>
                         </li> //관리자인 경우 드롭박스표시
@@ -116,7 +116,7 @@ function Header(){
                                             background: "transparent",
                                             border: 0,
                                         }}
-                                    > welcome, {userData.fullName} 
+                                    > {userData.fullName} 님
                                     </button>
                                 </li>
 
@@ -140,7 +140,7 @@ function Header(){
                                 <>
                                 <li className="nav-item text-white">
                                     <NavLink className="nav-link" to="/register">
-                                        Register
+                                        회원가입
                                     </NavLink>
                                 </li>
                                 <li className="nav-item text-white">

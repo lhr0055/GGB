@@ -65,7 +65,46 @@ code {
   font-weight: normal;
   font-style: normal;
 }
+.양진체{
+  font-family: '양진체';
+  font-weight: lighter;
+}
+@font-face {
+  font-family: '양진체';
+  src: url('https://fastly.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 
-
+.SF_HambakSnow{
+  font-family: 'SF_HambakSnow';
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'SF_HambakSnow';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.TheJamsil5Bold{
+  font-family: 'TheJamsil5Bold';
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'TheJamsil5Bold';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+.HancomMalangMalang-Regular{
+  font-family: 'HancomMalangMalang-Regular';
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'HancomMalangMalang-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2406-1@1.0/HancomMalangMalang-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
 

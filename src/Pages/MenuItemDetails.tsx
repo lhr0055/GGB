@@ -49,7 +49,7 @@ function MenuItemDetails(){
         userId: userData.id,
       });
 
-      if(response.data && response.data.isSucess){
+      if(response.data && response.data.isSuccess){
         toastNotify("Item added to cart successfully!");
       }
     // console.log(response);
@@ -63,7 +63,7 @@ function MenuItemDetails(){
             {!isLoading ? ( //로드되지않는경우 세부정보 표시 
             <div className="row">
             <div className="col-7">
-              <h2 className="text-success">{data.result?.name}</h2>
+              <h2 className="SF_HambakSnow">{data.result?.name}</h2>
               <span>
                 <span
                   className="badge text-bg-dark pt-2"
