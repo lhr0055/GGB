@@ -30,7 +30,7 @@ function Header(){
 
     return (
         <div>
-          <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
+          <nav className="navbar navbar-expand-lg navbar-dark" style={{background :"#800000" ,backgroundImage: "linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)"}}>
             <div className="container-fluid">
             <NavLink className="nav-link" aria-current="page" to="/">
                 <img src={logo} style={{height: "40px"}} className="m-1" />
@@ -47,7 +47,7 @@ function Header(){
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0 w-100"> 
-                        <li className="nav-item">
+                        <li className="nav-item fw-bold">
                             <NavLink className="nav-link" aria-current="page" to="/">
                                     홈으로
                             </NavLink>
@@ -97,7 +97,7 @@ function Header(){
                         
 
                         {/* 장바구니 */}
-                        <li className="nav-item">
+                        <li className="nav-item ">
                             <NavLink className="nav-link" aria-current="page" to="/shoppingCart">
                             <i className="bi bi-cart"></i>
                             {userData.id && `(${shoppingCartFromStore.length})`}
@@ -105,7 +105,7 @@ function Header(){
                             </NavLink>
                         </li>
 
-                        <div className="d-flex" style={{marginLeft: "auto"}}>
+                        <div className="d-flex fw-bold" style={{marginLeft: "auto"}}>
                             { userData.id && (
                                 <>
                                 <li className="nav-item">
@@ -123,11 +123,12 @@ function Header(){
 
                                 <li className="nav-item">
                                     <button
-                                        className="btn btn-success btn-outlined rounded-pill text-white mx-2"
+                                        className="btn btn-outlined fw-bold rounded-pill text-white mx-2"
                                         style={{
                                             border: "none",
                                             height: "40px",
                                             width: "100px",
+                                            backgroundImage: "linear-gradient(red, blue)",
                                     }}
                                     onClick={handleLogout}> 
                                         Logout
@@ -143,11 +144,12 @@ function Header(){
                                     </NavLink>
                                 </li>
                                 <li className="nav-item text-white">
-                                    <NavLink className="btn btn-success btn-outlined rounded-pill text-white mx-2"
+                                    <NavLink className="btn fw-bold btn-outlined rounded-pill text-white mx-2"
                                         style={{
                                             border: "none",
                                             height: "40px",
                                             width: "100px",
+                                            backgroundImage: "linear-gradient(red, blue)",
                                         }}
                                         to="/login">
                                             Login
