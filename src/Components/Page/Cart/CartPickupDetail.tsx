@@ -62,7 +62,7 @@ export default function CartPickupDetails(){
 
     return(
         <div className="border pb-5 pt-3">
-        <h1 style={{ fontWeight: "300" }} className="text-center text-success">
+        <h1 style={{ fontWeight: "300", color: "#000080"}} className="text-center">
           Pickup Details
         </h1>
         <hr /> 
@@ -113,7 +113,7 @@ export default function CartPickupDetails(){
           </div>
           <button
             type="submit"
-            className="btn btn-lg btn-success form-control mt-3"
+            className="btn btn-lg form-control mt-3" style={{backgroundImage: "linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)", fontWeight:"bold", color:"white"}}
             disabled={loading || shoppingCartFromStore.length == 0} //로딩중으로 상태 변환한다. 
           >
             {loading ? <MiniLoader /> : "Looks Good? Place Order!" }

@@ -81,7 +81,7 @@ const totalQuantity = selectedItems
 
     return(
       <div className="container p-4 m-2">
-        <h4 className="text-center text-success">Cart Summary</h4>
+        <h4 className="text-center text-danger">Cart Summary</h4>
 
         {/* 모든 장바구니 항목들 반복을 위한 매핑*/}
         {shoppingCartFromStore.map((
