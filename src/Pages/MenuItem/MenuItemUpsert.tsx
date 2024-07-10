@@ -43,8 +43,6 @@ function MenuItemUpsert(){
         if (savedData) {
             const parsedData = JSON.parse(savedData);
             setMenuItemInputs(parsedData.inputs);
-            setImageToDisplay(parsedData.image);
-            setImageToStore(parsedData.file);
         }
     }, []);
 
@@ -70,11 +68,9 @@ function MenuItemUpsert(){
         // 로컬 스토리지에 데이터 저장하기
         const dataToSave = {
             inputs: menuItemInputs,
-            image: imageToDisplay,
-            file: imageToStore
         };
         localStorage.setItem("menuItemData", JSON.stringify(dataToSave));
-    }, [menuItemInputs, imageToDisplay, imageToStore]);
+    }, [menuItemInputs]);
 
 
 
