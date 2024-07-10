@@ -21,11 +21,11 @@ function OrderSummary({ data, userInput }: orderSummaryProps) {
     //현재 상태와 비교하여 다음 상태 나타내기 
     const nextStatus: any = 
       data.status! === SD_Status.CONFIRMED
-      ? {color:"info", value: SD_Status.PREPARING}
+      ? {color:"primary", value: SD_Status.PREPARING}
       : data.status! === SD_Status.PREPARING
-      ? {color:"warning", value: SD_Status.SHIPPING}
+      ? {color:"primary", value: SD_Status.SHIPPING}
       : data.status! === SD_Status.SHIPPING && {
-        color: "success",
+        color: "primary",
         value: SD_Status.COMPLETED,
       };
 
@@ -53,7 +53,7 @@ function OrderSummary({ data, userInput }: orderSummaryProps) {
       {!loading && (  
       <>
       <div className="d-flex justify-content-between aling-items-center">
-        <h3 className="text-success">Order Summary</h3> 
+        <h3 className="text-success BookkMyungjo-Bd">주문 상세</h3> 
         <span className={`btn btn-outline-${badgeTypeColor} fs-6`}>
           {data.status}
         </span>
@@ -61,11 +61,11 @@ function OrderSummary({ data, userInput }: orderSummaryProps) {
 
       <div className="mt-3"> 
         {/* userInput => ordersummary props */}
-        <div className="border py-3 px-2">Name : {userInput.name} </div> 
-        <div className="border py-3 px-2">Email : {userInput.email} </div>
-        <div className="border py-3 px-2">Phone : {userInput.phoneNumber} </div>
+        <div className="border py-3 px-2">이름 : {userInput.name} </div> 
+        <div className="border py-3 px-2">이메일 : {userInput.email} </div>
+        <div className="border py-3 px-2">휴대폰 : {userInput.phoneNumber} </div>
         <div className="border py-3 px-2">
-        <h4 className="text-success">Menu Items</h4>
+        <h4 className="text-success">메뉴</h4>
         <div className="p-3">
             {data.cartItems?.map((cartItem: cartItemModel, index: number) => {
                 return (
@@ -91,9 +91,9 @@ function OrderSummary({ data, userInput }: orderSummaryProps) {
         </div>
         <div className="d-flex justify-content-between align-items-center mt-3">
           <button 
-            className="btn btn-secondary"
+            className="btn btn-dark"
             onClick={()=>navigate(-1)}
-          > Back to Orders
+          > 주문내역
           </button>
           {userData.role == SD_Roles.ADMIN && ( //관리자인 경우에만 상태 바꿀 수 있음 
             <div className="d-flex">
@@ -101,11 +101,11 @@ function OrderSummary({ data, userInput }: orderSummaryProps) {
                data.status! !== SD_Status.CONFIRMED && ( //취소아니고 완료아니면 취소버튼 표시 
                 <button 
                   className="btn btn-danger mx-2" 
-                  onClick={handleCancel}> Cancel 
+                  onClick={handleCancel}> 취소 
                 </button>
                )}
               
-              <button className={`btn btn-${nextStatus.color}`}
+              <button className={`btn btn-outline-${nextStatus.color}`}
                 onClick={handleNextStatus}>
                 {nextStatus.value}
               </button>

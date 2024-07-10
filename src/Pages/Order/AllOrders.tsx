@@ -62,7 +62,7 @@ function AllOrders(){
     useEffect(() => {
       if (data) {
         setOrderData(data.apiResponse.result);
-        console.log(data);
+        // console.log(data);
         // const { TotalRecords } = JSON.parse(data.totalRecords);
         const { TotalRecords } = data.totalRecords ? JSON.parse(data.totalRecords) : { TotalRecords: 0 };
         setTotalRecords(TotalRecords);
@@ -74,23 +74,25 @@ function AllOrders(){
        (pageOptions.pageNumber -1) * pageOptions.pageSize + 1;
       const dataEndNumber = pageOptions.pageNumber * pageOptions.pageSize;
 
-      return `${dataStartNumber} - 
-        ${dataEndNumber < totalRecords ? dataEndNumber : totalRecords}
-        of ${totalRecords}`;
+      return `${dataStartNumber}
+             - 
+            ${
+              dataEndNumber < totalRecords ? dataEndNumber : totalRecords
+            } of ${totalRecords}`;
     };
 
 
     const handlePageOptionChange = (direction: string, pageSize?: number) => {
-      if(direction === "prev") {
-        setPageOptions({pageSize: 5, pageNumber: pageOptions.pageNumber -1 });
-      } else if(direction === "next"){
-        setPageOptions({pageSize: 5, pageNumber: pageOptions.pageNumber +1 });
-      } else if(direction === "change"){
+      if (direction === "prev") {
+        setPageOptions({ pageSize: 5, pageNumber: pageOptions.pageNumber - 1 });
+      } else if (direction === "next") {
+        setPageOptions({ pageSize: 5, pageNumber: pageOptions.pageNumber + 1 });
+      } else if (direction === "change") {
         setPageOptions({
-          pageSize: pageSize ? pageSize: 5, //null이 아닌 경우 페이지 크기 5
+          pageSize: pageSize ? pageSize : 5,
           pageNumber: 1,
         });
-      };
+      }
     };
 
 
@@ -102,13 +104,13 @@ function AllOrders(){
       {!isLoading && (  
       <> 
         <div className="d-flex align-items-center justify-content-between mx-5 mt-5">
-          <h1 className="text-success">Orders List</h1>
+          <h1 className="text-dark BookkMyungjo-Bd">주문내역</h1>
           
           <div className="d-flex" style={{width: "40%"}}>
             <input
               type="text"
               className="form-control mx-2"
-              placeholder="Search Name, Email or Phone"
+              placeholder="이름, 이메일, 번호 검색"
               name="SearchString"
               onChange={handleChange}
             />
@@ -124,7 +126,7 @@ function AllOrders(){
               ))}
             </select>
             <button
-              className="btn btn-outline-success"
+              className="btn btn-warning"
               onClick={handleFilters}>
                 Filter
             </button>
@@ -133,7 +135,7 @@ function AllOrders(){
         
         <OrderList isLoading={isLoading} orderData={orderData} />
         <div className="d-flex mx-5 justify-content-end align-items-center">
-          <div>Rows per Page: </div>
+          <div>항목 수: </div>
           <div>
             <select 
               className="form-select mx-2"
@@ -141,7 +143,7 @@ function AllOrders(){
                 handlePageOptionChange("change", Number(e.target.value));
                 setCurrentPageSize(Number(e.target.value));
               }}  
-              style={{width: "60px"}}
+              style={{width: "70px"}}
               value={currentPageSize}
             >
               <option>5</option>
@@ -151,7 +153,7 @@ function AllOrders(){
             </select>
           </div>
 
-            <div className="mx-2"> {getPageDetails()} </div>
+          {/* <div className="mx-2"> {getPageDetails()} </div>
             <button //이전 페이지 버튼
               onClick={() => handlePageOptionChange("prev")}
               disabled={pageOptions.pageNumber === 1}
@@ -164,7 +166,26 @@ function AllOrders(){
               className="btn btn-outline-primary px-3 mx-2">
                 <i className="bi bi-chevron-right"></i>
             </button>
-        </div>
+          </div> */}
+
+        <div className="mx-2">{getPageDetails()}</div>
+            <button
+              onClick={() => handlePageOptionChange("prev")}
+              disabled={pageOptions.pageNumber === 1}
+              className="btn btn-outline-primary px-3 mx-2"
+            >
+              <i className="bi bi-chevron-left"></i>
+            </button>
+            <button
+              onClick={() => handlePageOptionChange("next")}
+              disabled={
+                pageOptions.pageNumber * pageOptions.pageSize >= totalRecords
+              }
+              className="btn btn-outline-primary px-3 mx-2"
+            >
+              <i className="bi bi-chevron-right"></i>
+            </button>
+          </div>
       </>
       )}
     </>

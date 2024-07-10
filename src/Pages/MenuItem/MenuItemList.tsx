@@ -30,23 +30,23 @@ function MenuItemList(){
         {!isLoading && (
           <div className="table p-5">
           <div className="d-flex align-items-center justify-content-between">
-            <h1 className="text-success">MenuItem List</h1>
+            <h1 className="text-dark BookkMyungjo-Bd">메뉴리스트</h1>
 
-            <button className="btn btn-success" 
+            <button className="btn btn-warning" 
               onClick={()=>navigate("/menuItem/menuitemupsert")}
-            >Add New Menu Item 
+            >메뉴 추가하기
             </button>
 
           </div>
           <div className="p-2">
             <div className="row border">
-              <div className="col-1">Image</div>
+              <div className="col-1">이미지</div>
               <div className="col-1">ID</div>
-              <div className="col-2">Name</div>
-              <div className="col-2">Category</div>
-              <div className="col-1">Price</div>
-              <div className="col-2">Special Tag</div>
-              <div className="col-1">Action</div>
+              <div className="col-2">상품명</div>
+              <div className="col-2">카테고리</div>
+              <div className="col-1">가격</div>
+              <div className="col-2">Tag</div>
+              <div className="col-1">편집</div>
             </div>
 
           {data.result.map((menuItem: menuItemModel)=>{
@@ -65,13 +65,14 @@ function MenuItemList(){
               <div className="col-1">{menuItem.price}</div>
               <div className="col-2">{menuItem.specialTag}</div>
               <div className="col-1">
-                <button className="btn btn-success">
+                <button className="btn btn-outline-success"> 
+                  {/* btn-success */}
                   <i className="bi bi-pencil-fill"
                   // ?? menuItemUpsert아니고 menuitemupsert?
                     onClick={()=>navigate("/menuItem/menuItemUpsert/" + menuItem.id)} /> 
                 </button>
                 <button 
-                  className="btn btn-danger mx-2"
+                  className="btn btn-outline-danger mx-2"
                   onClick={() => {
                     if(window.confirm("정말 삭제하겠습니까?"))
                       {

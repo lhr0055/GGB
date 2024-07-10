@@ -111,12 +111,12 @@ function MenuItemUpsert(){
           //update
           formData.append("Id", id);
           response = await updateMenuItem({data: formData,id})
-          toastNotify("Menu Item updated successfully", "success");
+          toastNotify("메뉴가 수정되었습니다.", "success");
         }
         else{
           //create
           response = await createMenuItem(formData);
-          toastNotify("Menu Item created successfully", "success");
+          toastNotify("메뉴가 추가되었습니다", "success");
         }
 
         if(response){
@@ -130,8 +130,8 @@ function MenuItemUpsert(){
         <div className="container border mt-5 p-5 bg-light">
           {loading && <MainLoader/>}
           {/* id를 기반으로 편집 메뉴 항목 표시하고 id 없을 경우 추가 표시 */}
-          <h3 className="px-2 text-success">
-            {id ? "Edit Menu Item" : "Add Menu Item"}
+          <h3 className="px-2 text-dark BookkMyungjo-Bd">
+            {id ? "메뉴 수정하기" : "메뉴 추가하기"}
           </h3>
         <form method="post" encType="multipart/form-data" onSubmit={handleSubmit}>
           <div className="row mt-3">
@@ -139,7 +139,7 @@ function MenuItemUpsert(){
               <input
                 type="text"
                 className="form-control"
-                placeholder="Enter Name"
+                placeholder="제품명..."
                 required
                 name="name"
                 value={menuItemInputs.name}
@@ -147,7 +147,7 @@ function MenuItemUpsert(){
               />
               <textarea
                 className="form-control mt-3"
-                placeholder="Enter Description"
+                placeholder="설명..."
                 name="description"
                 rows={10}
                 value={menuItemInputs.description}
@@ -156,7 +156,7 @@ function MenuItemUpsert(){
               <input
                 type="text"
                 className="form-control mt-3"
-                placeholder="Enter Special Tag"
+                placeholder="Tag..."
                 name="specialTag"
                 value={menuItemInputs.specialTag}
                 onChange={handleMenuItemInput}
@@ -191,16 +191,16 @@ function MenuItemUpsert(){
                 <div className="col-6">
                   <button
                       type="submit"
-                      className="btn btn-success form-control mt-3">
+                      className="btn btn-danger form-control mt-3">
                       {/* id가 있으면 업뎃, 없으면 생성으로 버튼 이름 표시하기 */}
-                      {id ? "Update" : "Create" }
+                      {id ? "업데이트" : "추가하기" }
                   </button>
                 </div>
                 <div className="col-6">
                     <a
                       onClick={() => navigate("/menuItem/menuitemlist")}
                       className="btn btn-secondary form-control mt-3">
-                      Back to Menu Items
+                      메뉴리스트
                     </a>
                 </div>
               </div>

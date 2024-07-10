@@ -17,13 +17,13 @@ function MyOrders(){
       {!isLoading && (  
       <>
         <div className="d-flex align-items-center justify-content-between mx-5 mt-5">
-          <h1 className="text-success">My Orders</h1>
+          <h1 className="text-dark BookkMyungjo-Bd">내 주문내역</h1>
         </div>
         <OrderList isLoading={isLoading} orderData={data?.apiResponse.result} />
 
           {!(data?.apiResponse.result.length > 0) && (
             <div className="px-5 py-3">
-              You do not have any previous orders.
+              주문내역이 없습니다.
             </div> 
           )}
       </>

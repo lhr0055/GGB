@@ -16,12 +16,12 @@ function OrderList({isLoading, orderData}: OrderListProps) {
         <div className="p-2">
           <div className="row border">
             <div className="col-1">ID</div>
-            <div className="col-2">Name</div>
-            <div className="col-2">Phone</div>
-            <div className="col-1">Total</div>
-            <div className="col-1">Items</div>
-            <div className="col-2">Date</div>
-            <div className="col-2">Status</div>
+            <div className="col-2">이름</div>
+            <div className="col-2">휴대폰</div>
+            <div className="col-1">결제금액</div>
+            <div className="col-1">결제수량</div>
+            <div className="col-2">주문일</div>
+            <div className="col-2">주문상태</div>
             <div className="col-1"></div>
           </div>
           {/* 아이템 개수만큼 반복하기 */}
