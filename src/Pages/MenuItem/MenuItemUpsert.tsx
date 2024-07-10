@@ -36,6 +36,20 @@ function MenuItemUpsert(){
     const [updateMenuItem] = useUpdateMenuItemMutation();
     const { data } = useGetMenuItemByIdQuery(id);
 
+
+    useEffect(() => {
+        // 로컬 스토리지에서 데이터 불러오기
+        const savedData = localStorage.getItem("menuItemData");
+        if (savedData) {
+            const parsedData = JSON.parse(savedData);
+            setMenuItemInputs(parsedData.inputs);
+            setImageToDisplay(parsedData.image);
+            setImageToStore(parsedData.file);
+        }
+    }, []);
+
+
+
     useEffect(()=>{
       if(data && data.result){
         const tempData = {
@@ -49,6 +63,22 @@ function MenuItemUpsert(){
         setImageToDisplay(data.result.image);
       }
     }, [data]);
+
+
+
+    useEffect(() => {
+        // 로컬 스토리지에 데이터 저장하기
+        const dataToSave = {
+            inputs: menuItemInputs,
+            image: imageToDisplay,
+            file: imageToStore
+        };
+        localStorage.setItem("menuItemData", JSON.stringify(dataToSave));
+    }, [menuItemInputs, imageToDisplay, imageToStore]);
+
+
+
+
 
     const handleMenuItemInput = (
         e: React.ChangeEvent<
@@ -120,6 +150,7 @@ function MenuItemUpsert(){
         }
 
         if(response){
+            localStorage.removeItem("menuItemData"); // 제출 후 로컬 스토리지 초기화
           setLoading(false);
           navigate("/menuItem/menuitemlist");
         }
