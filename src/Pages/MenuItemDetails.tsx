@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useGetMenuItemByIdQuery } from "../Apis/menuItemApi";
 import { useUpdateShoppingCartMutation } from "../Apis/shoppingCartApi";
 import { MainLoader, MiniLoader } from "../Components/Page/Common";
+import { MenuDetail } from "../Components/Page/Home";
 import { apiResponse } from "../Interfaces";
 import { toastNotify } from "../Helper";
 import userModel from "../Interfaces/userModel";
@@ -50,7 +51,7 @@ function MenuItemDetails(){
       });
 
       if(response.data && response.data.isSuccess){
-        toastNotify("Item added to cart successfully!");
+        toastNotify("장바구니 추가 성공!");
       }
     // console.log(response);
     setIsAddingToCart(false);
@@ -108,7 +109,7 @@ function MenuItemDetails(){
                       {/*  < size={50}/> 매개변수 전달하여 크기를 지정할 수 있다 */}
                     </button>
                   ) : (
-                    <button className="btn btn-warning form-control"
+                    <button className="btn btn-outline-warning form-control "
                     onClick={()=>
                       handleAddToCart(data.result?.id) //메뉴항목id 가져오기
                     }>
@@ -119,10 +120,10 @@ function MenuItemDetails(){
     
                 <div className="col-5 ">
                   <button 
-                    className="btn btn-outline-secondary form-control text-dark"
+                    className="btn btn-outline-secondary form-control text-black"
                     onClick={()=>navigate(-1)}> 
                     {/* -1은 마지막으로 접속했던 url로 이동 */}
-                      Back to Home
+                      돌아가기
                   </button>
                 </div>
               </div>
@@ -130,7 +131,7 @@ function MenuItemDetails(){
             <div className="col-5">
               <img
                 src={data.result.image}
-                width="100%"
+                width="50%"
                 style={{ borderRadius: "50%" }}
                 alt="No content"
               ></img>
@@ -141,8 +142,12 @@ function MenuItemDetails(){
                 style={{width: "100%"}}
               >
                 <MainLoader/>
+                
               </div>
             )}
+            <MenuDetail></MenuDetail>
+
+              
           </div>
         );
 }

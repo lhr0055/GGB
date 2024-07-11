@@ -19,5 +19,4 @@ export {Home, NotFound, MenuItemDetails, ShoppingCart, Register, Login,
     AccessDenied, AuthentationTest, AuthentationTestAdmin, Payment, 
     OrderConfirmed, MyOrders, OrderDetails, AllOrders, MenuItemList, MenuItemUpsert
 }; 
-// 파란색과 노란색의 차이는 무엇인가? 
-// 그거 eslint 버그라고 합니다.
+//파란색과 노란색의 차이는 무엇인가? 
