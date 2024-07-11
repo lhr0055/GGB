@@ -97,7 +97,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             </div>
           </div>
           <div className="mt-5">
-            <button type="submit" className="btn btn-outline-success" disabled={loading}>
+            <button type="submit" className="btn btn-success" disabled={loading}>
               Register
             </button>
           </div>

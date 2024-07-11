@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useGetMenuItemByIdQuery } from "../Apis/menuItemApi";
 import { useUpdateShoppingCartMutation } from "../Apis/shoppingCartApi";
 import { MainLoader, MiniLoader } from "../Components/Page/Common";
+import { MenuDetail } from "../Components/Page/Home";
 import { apiResponse } from "../Interfaces";
 import { toastNotify } from "../Helper";
 import userModel from "../Interfaces/userModel";
@@ -119,7 +120,7 @@ function MenuItemDetails(){
     
                 <div className="col-5 ">
                   <button 
-                    className="btn btn-outline-secondary form-control text-dark"
+                    className="btn btn-secondary form-control"
                     onClick={()=>navigate(-1)}> 
                     {/* -1은 마지막으로 접속했던 url로 이동 */}
                       Back to Home
@@ -143,6 +144,7 @@ function MenuItemDetails(){
                 <MainLoader/>
               </div>
             )}
+              <MenuDetail></MenuDetail>
           </div>
         );
 }
