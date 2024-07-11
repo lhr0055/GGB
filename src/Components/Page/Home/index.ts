@@ -1,4 +1,4 @@
 import MenuItemList from "./MenuItemList";
 import MenuItemCard from "./MenuItemCard";
-
-export {MenuItemList, MenuItemCard};
+import MenuDetail from "./MenuDetail";
+export {MenuItemList, MenuItemCard, MenuDetail};

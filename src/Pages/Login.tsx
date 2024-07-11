@@ -83,7 +83,7 @@ function Login() {
             {error && <p className="text-danger">{error}</p>}
             <button
               type="submit"
-              className="btn btn-outline-success"
+              className="btn btn-success"
               style={{ width: "200px" }}
             >
               Login
