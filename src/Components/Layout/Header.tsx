@@ -30,7 +30,7 @@ function Header(){
 
     return (
         <div>
-          <nav className="navbar navbar-expand-lg navbar-dark" style={{background :"#800000" ,backgroundImage: "linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)"}}>
+            <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
             <div className="container-fluid">
             <NavLink className="nav-link" aria-current="page" to="/">
                 <img src={logo} style={{height: "40px"}} className="m-1" />
@@ -128,6 +128,7 @@ function Header(){
                                             border: "none",
                                             height: "40px",
                                             width: "100px",
+                                            // backgroundImage: "linear-gradient(#C13020, #1239F8)",
                                             backgroundImage: "linear-gradient(red, blue)",
                                     }}
                                     onClick={handleLogout}> 
@@ -144,7 +145,7 @@ function Header(){
                                     </NavLink>
                                 </li>
                                 <li className="nav-item text-white">
-                                    <NavLink className="btn fw-bold btn-outlined rounded-pill text-white mx-2"
+                                    <NavLink className="btn btn-outlined rounded-pill text-white mx-2"
                                         style={{
                                             border: "none",
                                             height: "40px",

@@ -21,11 +21,11 @@ function OrderSummary({ data, userInput }: orderSummaryProps) {
     //현재 상태와 비교하여 다음 상태 나타내기 
     const nextStatus: any = 
       data.status! === SD_Status.CONFIRMED
-      ? {color:"primary", value: SD_Status.PREPARING}
+      ? {color:"success", value: SD_Status.PREPARING}
       : data.status! === SD_Status.PREPARING
-      ? {color:"primary", value: SD_Status.SHIPPING}
+      ? {color:"success", value: SD_Status.SHIPPING}
       : data.status! === SD_Status.SHIPPING && {
-        color: "primary",
+        color: "success",
         value: SD_Status.COMPLETED,
       };
 
@@ -53,19 +53,18 @@ function OrderSummary({ data, userInput }: orderSummaryProps) {
       {!loading && (  
       <>
       <div className="d-flex justify-content-between aling-items-center">
-        <h3 className="text-success BookkMyungjo-Bd">주문 상세</h3> 
+        <h3 className="text-dark BookkMyungjo-Bd">주문상세</h3> 
         <span className={`btn btn-outline-${badgeTypeColor} fs-6`}>
           {data.status}
         </span>
       </div>
 
       <div className="mt-3"> 
-        {/* userInput => ordersummary props */}
         <div className="border py-3 px-2">이름 : {userInput.name} </div> 
         <div className="border py-3 px-2">이메일 : {userInput.email} </div>
         <div className="border py-3 px-2">휴대폰 : {userInput.phoneNumber} </div>
         <div className="border py-3 px-2">
-        <h4 className="text-success">메뉴</h4>
+        <h4 className="text-dark">메뉴</h4>
         <div className="p-3">
             {data.cartItems?.map((cartItem: cartItemModel, index: number) => {
                 return (

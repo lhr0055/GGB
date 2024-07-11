@@ -108,11 +108,11 @@ function MenuItemDetails(){
                       {/*  < size={50}/> 매개변수 전달하여 크기를 지정할 수 있다 */}
                     </button>
                   ) : (
-                    <button className="btn btn-success form-control"
+                    <button className="btn btn-warning form-control"
                     onClick={()=>
                       handleAddToCart(data.result?.id) //메뉴항목id 가져오기
                     }>
-                    Add to Cart
+                    장바구니 추가
                   </button>
                   )}
                 </div>

@@ -72,7 +72,7 @@ function CartSummary(){
 
     return(
       <div className="container p-4 m-2">
-        <h3 className="text-center text-success TheJamsil5Bold">장바구니</h3>
+        <h3 className="text-center text-dark BookkMyungjo-Bd">장바구니</h3>
 
         {/* 모든 장바구니 항목들 반복을 위한 매핑*/}
         {shoppingCartFromStore.map((

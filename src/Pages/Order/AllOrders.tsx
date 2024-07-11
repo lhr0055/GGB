@@ -153,7 +153,7 @@ function AllOrders(){
             </select>
           </div>
 
-          {/* <div className="mx-2"> {getPageDetails()} </div>
+          <div className="mx-2"> {getPageDetails()} </div>
             <button //이전 페이지 버튼
               onClick={() => handlePageOptionChange("prev")}
               disabled={pageOptions.pageNumber === 1}
@@ -165,25 +165,6 @@ function AllOrders(){
               disabled={pageOptions.pageNumber * pageOptions.pageSize >= totalRecords}
               className="btn btn-outline-primary px-3 mx-2">
                 <i className="bi bi-chevron-right"></i>
-            </button>
-          </div> */}
-
-        <div className="mx-2">{getPageDetails()}</div>
-            <button
-              onClick={() => handlePageOptionChange("prev")}
-              disabled={pageOptions.pageNumber === 1}
-              className="btn btn-outline-primary px-3 mx-2"
-            >
-              <i className="bi bi-chevron-left"></i>
-            </button>
-            <button
-              onClick={() => handlePageOptionChange("next")}
-              disabled={
-                pageOptions.pageNumber * pageOptions.pageSize >= totalRecords
-              }
-              className="btn btn-outline-primary px-3 mx-2"
-            >
-              <i className="bi bi-chevron-right"></i>
             </button>
           </div>
       </>

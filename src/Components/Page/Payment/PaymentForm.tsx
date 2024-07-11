@@ -95,15 +95,11 @@ const PaymentForm = ({data, userInput} : orderSummaryProps) => {
       });
 
       if(response){
-        if(response.data?.result.status === SD_Status.CONFIRMED){
-          navigate(`/order/orderConfirmed/${response.data.result.orderHeaderId}`);
-          {shoppingCartFromStore.map((
-            cartItem : cartItemModel, index: number) => {
-              handleQuantity(0,cartItem)
-            })}
-          console.log(`${response.data.result.orderHeaderId}`)
-      }
-      else{
+        if (response.data?.result.status === SD_Status.CONFIRMED) {
+          navigate(
+            `/order/orderConfirmed/${response.data.result.orderHeaderId}`
+          );
+        } else {
         navigate("/failed")
       }
     }
@@ -116,9 +112,9 @@ const PaymentForm = ({data, userInput} : orderSummaryProps) => {
       <PaymentElement />
       <button
         disabled={!stripe || isProcessing}
-        className='btn btn-success mt-5 w-100'>
+        className='btn btn-dark mt-5 w-100'>
         <span id="button-text">
-          {isProcessing ? "Processing ..." : "Submit Order"}
+          {isProcessing ? "Processing ..." : "결제하기"}
         </span>
       </button>
     </form>

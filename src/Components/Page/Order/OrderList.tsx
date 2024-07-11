@@ -42,11 +42,12 @@ function OrderList({isLoading, orderData}: OrderListProps) {
                 </div>
                 <div className="col-2">
                     <span className={`badge bg-${badgeColor}`}>
-                      {orderItem.status}</span>
+                      {orderItem.status}
+                    </span>
                 </div>
                 <div className="col-1">
                   <button 
-                    className="btn btn-success"
+                    className="btn btn-outline-success"
                     onClick={()=>
                         navigate(
                             "/order/orderDetails/" + orderItem.orderHeaderId

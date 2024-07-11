@@ -23,7 +23,7 @@ function Payment() {
       };
 
     if (!apiResult || !userInput) {  // apiResult나 userInput이 없는 경우 처리
-        return <div>Error: Missing payment data.</div>;
+        return <div>Error: 결제 실패하였습니다.</div>;
     }
 
     return (
@@ -35,7 +35,7 @@ function Payment() {
                     {/* api에서 가져온 값(props) 전달하기 */}
                 </div>
                 <div className="col-md-4 offset-md-1">
-                    <h3 className="text-success"> Payment </h3>
+                    <h3 className="text-dark BookkMyungjo-Bd"> 결제방식 </h3>
                     <div className="mt-5">
                         <PaymentForm data={apiResult} userInput={userInput} />
                     </div>

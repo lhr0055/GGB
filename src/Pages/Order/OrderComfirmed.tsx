@@ -17,7 +17,7 @@ function OrderConfirmed(){
           className="bi bi-check2-circle text-danger">
         </i>
         <div className="pb-5">
-          <h5 className="mt-1"> order ID: {id}</h5>
+          <h5 className="mt-1"> 주문 ID: {id}</h5>
             <img
               src={orderImage}
               style={{ 
@@ -30,7 +30,7 @@ function OrderConfirmed(){
         <button className="btn btn-outline-danger rounded-pill"
               style={{cursor:"pointer"}}
               onClick={()=> navigate("/order/myorders")}>
-              My Orders
+              주문내역
           </button>
       </div> 
     </div>

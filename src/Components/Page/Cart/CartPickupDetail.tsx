@@ -62,7 +62,7 @@ export default function CartPickupDetails(){
 
     return(
         <div className="border pb-5 pt-3">
-        <h2 className="text-center text-success TheJamsil5Bold">
+        <h2 className="text-center text-dark BookkMyungjo-Bd">
           주문상세
         </h2>
         <hr /> 
@@ -113,12 +113,12 @@ export default function CartPickupDetails(){
           </div>
           <button
             type="submit"
-            className="btn btn-lg btn-success form-control mt-3"
-            style={{background :"#800000" ,backgroundImage: "linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)"}}
+            className="btn btn-lg btn-dark form-control mt-3"
             disabled={loading || shoppingCartFromStore.length == 0} //로딩중으로 상태 변환한다. 
           >
-            <div className="HancomMalangMalang-Regular">
-            {loading ? <MiniLoader /> : "결제하기" }
+            <div 
+              className="HancomMalangMalang-Regular">
+            {loading ? <MiniLoader /> : "주문하기" }
             </div>
           </button>
         </form>

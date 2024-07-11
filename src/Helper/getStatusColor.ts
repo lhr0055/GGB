@@ -4,16 +4,16 @@ import { SD_Status } from "../Utility/SD";
 
 const getStatusColor = (status: SD_Status) => {
     return status === SD_Status.CONFIRMED 
-    ? 'secondary' 
+    ? "warning"
     : status === SD_Status.PAYMENT
-    ? "secondary"
+    ? "warning"
     : status === SD_Status.CANCELLED
     ? "danger"
     : status === SD_Status.COMPLETED
     ? "primary"
     : status === SD_Status.PREPARING
-    ? "secondary"
-    : status === SD_Status.SHIPPING && "secondary";
+    ? "warning"
+    : status === SD_Status.SHIPPING && "warning";
 } 
 
 export default getStatusColor;
