@@ -119,7 +119,7 @@ function MenuItemDetails(){
     
                 <div className="col-5 ">
                   <button 
-                    className="btn btn-secondary form-control"
+                    className="btn btn-outline-secondary form-control text-dark"
                     onClick={()=>navigate(-1)}> 
                     {/* -1은 마지막으로 접속했던 url로 이동 */}
                       Back to Home
