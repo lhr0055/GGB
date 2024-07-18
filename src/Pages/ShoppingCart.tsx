@@ -16,5 +16,3 @@ function ShoppingCart(){
 }
 
 export default withAuth(ShoppingCart);
-
-//스니펫 파일 사용 

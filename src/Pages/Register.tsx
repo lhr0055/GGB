@@ -47,13 +47,13 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         <div className="container text-center">
           {loading && <MainLoader/>}
         <form method="post" onSubmit={handleSubmit}>
-          <h1 className="mt-5">Register</h1>
+          <h1 className="mt-5">회원가입</h1>
           <div className="mt-5">
             <div className="col-sm-6 offset-sm-3 col-xs-12 mt-4">
               <input
                 type="text"
                 className="form-control"
-                placeholder="Enter Username"
+                placeholder="아이디"
                 required
                 name="userName"
                 value={userInput.userName}
@@ -64,7 +64,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Enter Name"
+                placeholder="이름"
                 required
                 name="name"
                 value={userInput.name}
@@ -75,7 +75,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               <input
                 type="password"
                 className="form-control"
-                placeholder="Enter Password"
+                placeholder="비밀번호"
                 required
                 name="password"
                 value={userInput.password}
@@ -90,7 +90,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 value={userInput.role}
                 onChange={handleUserInput}
                 >
-                <option value="">--Select Role--</option>
+                <option value="">--권한 설정--</option>
                 <option value={`${SD_Roles.CUSTOMER}`}>Customer</option>
                 <option value={`${SD_Roles.ADMIN}`}>Admin</option>
               </select>
@@ -98,7 +98,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           </div>
           <div className="mt-5">
             <button type="submit" className="btn btn-outline-success" disabled={loading}>
-              Register
+              회원가입
             </button>
           </div>
         </form>
@@ -107,5 +107,3 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 }
 
 export default Register;
-
-//스니펫 ui 

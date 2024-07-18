@@ -58,7 +58,7 @@ function Login() {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Enter Username"
+                placeholder="이름"
                 required
                 name="userName"
                 value={userInput.userName}
@@ -70,7 +70,7 @@ function Login() {
               <input
                 type="password"
                 className="form-control"
-                placeholder="Enter Password"
+                placeholder="비밀번호"
                 required
                 name="password"
                 value={userInput.password}
@@ -95,4 +95,3 @@ function Login() {
 }
 
 export default Login;
-//스니펫 ui 
