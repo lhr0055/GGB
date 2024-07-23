@@ -33,7 +33,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     name: userInput.name,
   });
   if(response.data){
-    toastNotify("Registeration sucessful! Please login to continue.");
+    toastNotify("회원가입이 완료되었습니다! 계속하려면 로그인하십시오.");
     navigate('/login');
   }else if(response.error){
     toastNotify(response.error.data.errorMessages[0],"error");
@@ -53,7 +53,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               <input
                 type="text"
                 className="form-control"
-                placeholder="아이디"
+                placeholder="이메일"
                 required
                 name="userName"
                 value={userInput.userName}

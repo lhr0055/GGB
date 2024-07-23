@@ -51,7 +51,7 @@ function MenuItemDetails(){
       });
 
       if(response.data && response.data.isSuccess){
-        toastNotify("장바구니 추가 성공!");
+        toastNotify("장바구니에 성공적으로 추가되었습니다!");
       }
     // console.log(response);
     setIsAddingToCart(false);

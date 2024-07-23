@@ -34,7 +34,7 @@ function MenuItemCard(props:Props){
       userId: userData.id,
     });
     if(response.data && response.data.isSuccess){
-      toastNotify("Item added to cart successfully!");
+      toastNotify("장바구니에 성공적으로 추가되었습니다!");
     }
     // console.log(response);
     setIsAddingToCart(false);

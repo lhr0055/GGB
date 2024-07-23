@@ -61,7 +61,7 @@ const PaymentForm = ({data, userInput} : orderSummaryProps) => {
 
     if (result.error) {
       // console.log(result.error.message);
-      toastNotify("An unexpected error occured.", "error"); //결제 실패 시 오류 토스트 메시지 
+      toastNotify("예기치 않은 오류가 발생했습니다", "error"); //결제 실패 시 오류 토스트 메시지 
       setIsProcessing(false);
     } else {
       console.log("result:",result);
