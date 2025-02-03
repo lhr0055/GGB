@@ -30,3 +30,5 @@
 
 - **Hosting:**
   - Microsoft Azure
+
+벌써 8개월이나 지났다니... 2025.01.03 - JH
